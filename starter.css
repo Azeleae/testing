@@ -1,0 +1,279 @@
+/* Déclaration de la police locale Bootzy TM */
+@font-face {
+    font-family: 'Bootzy TM';
+    src: url('BootzyTM.otf') format('opentype'),
+         url('BootzyTM.ttf') format('truetype'),
+         url('BootzyTM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variables Thème Jour (Rose #ff8fab) */
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #222222;
+    --text-title: #1a1a1a;
+    --accent-color: #ff8fab;
+    --btn-bg: #ff8fab;
+    --btn-hover-bg: #ff7597;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(255, 143, 171, 0.3);
+    --btn-shadow-hover: rgba(255, 143, 171, 0.45);
+    --nav-link-color: #2b2b2b;
+}
+
+/* Variables Thème Nuit (Jaune #fdd38b) */
+body.dark-mode {
+    --bg-color: #121214;
+    --text-primary: #f0f0f0;
+    --text-title: #ffffff;
+    --accent-color: #fdd38b;
+    --btn-bg: #fdd38b;
+    --btn-hover-bg: #fcc263;
+    --btn-text: #121214;
+    --btn-shadow: rgba(253, 211, 139, 0.2);
+    --btn-shadow-hover: rgba(253, 211, 139, 0.35);
+    --nav-link-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Figtree', 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-color);
+    z-index: 100;
+    transition: background-color 0.4s ease;
+}
+
+.home-icon {
+    position: absolute;
+    left: 50px;
+    width: 28px;
+    height: 28px;
+    color: var(--nav-link-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.home-icon:hover {
+    transform: scale(1.15);
+    color: var(--accent-color);
+}
+
+.home-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-links {
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    transition: opacity 0.2s, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+.nav-links span {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.nav-controls {
+    position: absolute;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+    color: var(--nav-link-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lang-option {
+    opacity: 0.4;
+    font-weight: 700;
+}
+
+.lang-option.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.lang-divider {
+    opacity: 0.3;
+}
+
+.theme-icon {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+/* Zone Principale et Centrage */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+/* Scène 3D */
+.scene {
+    perspective: 1200px;
+    cursor: grab;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.scene:active {
+    cursor: grabbing;
+}
+
+/* Carte 3D */
+.card-3d {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 280px;
+    min-height: 400px;
+}
+
+.card-3d.is-dragging {
+    transition: none;
+}
+
+/* Faces Avant & Arrière */
+.card-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-face img {
+    display: block;
+    max-height: 80vh;
+    max-width: 90vw;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.card-front {
+    transform: rotateY(0deg) translateZ(1px);
+}
+
+.card-back {
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+/* Bouton Flottant Bas Droit */
+.bottom-actions {
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    z-index: 100;
+}
+
+.btn-portfolio {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-transform: lowercase;
+    transition: transform 0.25s ease, background-color 0.3s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 15px var(--btn-shadow);
+}
+
+.btn-portfolio:hover {
+    transform: scale(1.05);
+    background-color: var(--btn-hover-bg);
+    box-shadow: 0 6px 20px var(--btn-shadow-hover);
+}
+
+/* Responsive Mobiles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 25px;
+    }
+    .home-icon {
+        left: 20px;
+    }
+    .nav-controls {
+        right: 20px;
+    }
+    .bottom-actions {
+        right: 20px;
+        bottom: 20px;
+    }
+    .card-face img {
+        max-height: 70vh;
+    }
+}

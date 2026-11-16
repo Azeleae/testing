@@ -1,0 +1,362 @@
+@font-face {
+    font-family: 'Bootzy TM';
+    src: url('BootzyTM.otf') format('opentype'),
+         url('BootzyTM.ttf') format('truetype'),
+         url('BootzyTM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #222222;
+    --text-title: #1a1a1a;
+    --text-secondary: #222222;
+    --accent-color: #ff8fab;
+    --btn-shadow: rgba(255, 143, 171, 0.3);
+    --nav-link-color: #2b2b2b;
+    --placeholder-bg: #f2f2f2;
+}
+
+body.dark-mode {
+    --bg-color: #121214;
+    --text-primary: #f0f0f0;
+    --text-title: #ffffff;
+    --text-secondary: #e0e0e0;
+    --accent-color: #fdd38b;
+    --btn-shadow: rgba(253, 211, 139, 0.2);
+    --nav-link-color: #e0e0e0;
+    --placeholder-bg: #26262a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Header */
+.navbar {
+    width: 100%;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Conteneur des icônes à gauche (Maison + Portfolio) */
+.nav-icons {
+    position: absolute;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.home-icon {
+    width: 26px;
+    height: 26px;
+    color: var(--nav-link-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.home-icon:hover {
+    transform: scale(1.15);
+    color: var(--accent-color);
+}
+
+.home-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-links {
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    transition: opacity 0.2s, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+.nav-links span {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.nav-controls {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+    color: var(--nav-link-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lang-option {
+    opacity: 0.4;
+    font-weight: 700;
+}
+
+.lang-option.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.lang-divider {
+    opacity: 0.3;
+}
+
+.theme-icon {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+/* Titre principal "concept & rédaction" */
+.edition-title-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 30px 0;
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.page-title {
+    font-family: 'Bootzy TM', cursive;
+    font-size: 3.8rem;
+    color: var(--accent-color);
+    text-transform: lowercase;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+}
+
+.arrow-icon {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-header.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 5px;
+    box-shadow: 0 4px 15px var(--btn-shadow);
+    display: none;
+    min-width: 220px;
+    z-index: 10;
+}
+
+.dropdown-menu.open {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Structure générale sans padding inutile en bas */
+.redaction-content {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 40px 30px 40px; /* Réduit le padding du bas */
+}
+
+.redaction-section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.redaction-section.last-section {
+    margin-bottom: 10px; /* Supprime l'espace inutile en bas sous la dernière section */
+}
+
+/* Titre et texte centrés entre eux, mais positionnés EN HAUT du bloc */
+.canal-text-content,
+.accroche-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+}
+
+.section-heading {
+    font-family: 'Bootzy TM', cursive;
+    font-size: 3.2rem;
+    color: var(--accent-color);
+    line-height: 0.95;
+    font-weight: normal;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.text-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    text-align: justify;
+    width: 100%;
+}
+
+/* SECTION 1 : CANAL+ LAYOUT */
+.layout-canal {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.canal-media-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.canal-main-billboard img,
+.canal-sub-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+.canal-sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Séparateur pleine largeur */
+.project-divider {
+    border: none;
+    height: 8px;
+    background-color: var(--accent-color);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+/* SECTION 2 : ACCROCHE VERBAL LAYOUT */
+.layout-accroche {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.accroche-single-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.full-accroche-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.img-error {
+    min-height: 250px;
+    background-color: var(--placeholder-bg);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .layout-canal {
+        grid-template-columns: 1fr;
+    }
+
+    .layout-accroche {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .redaction-content {
+        padding: 0 20px 20px 20px;
+    }
+
+    .canal-sub-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        font-size: 2.5rem;
+    }
+}

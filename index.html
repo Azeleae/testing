@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Éléa</title>
+    <!-- Import des polices Google Fonts : Figtree & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <a href="index.html" class="home-icon" aria-label="Accueil">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
+
+        <nav class="nav-links">
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="portfolio.html" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
+        </nav>
+
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Contenu Principal -->
+    <main class="hero">
+        <div class="hero-text">
+            <h1 class="greeting-container">
+                <span id="typewriter"></span><span class="cursor">|</span>
+            </h1>
+            <h2 class="sub-greeting">
+                <span id="intro-text">Je m'appelle</span> <span class="highlight-name">Éléa</span> <span class="sparkle-symbol">˖᯽ ݁˖</span>
+            </h2>
+            
+            <p class="description" id="hero-desc">
+                Designer et créatrice curieuse, j’aime toucher à tout, explorer de nouvelles idées et créer au gré de mes envies.
+            </p>
+
+            <div class="links">
+                <a href="starter.html" class="btn btn-portfolio" data-fr="cv" data-en="cv">cv</a>
+                <a href="https://www.linkedin.com/in/el%C3%A9a-mayor-36355132b/" target="_blank" rel="noopener noreferrer" class="btn btn-portfolio">linkedin</a>
+                <a href="portfolio.html" class="btn btn-portfolio" data-fr="portfolio" data-en="portfolio">portfolio</a>
+            </div>
+        </div>
+
+        <!-- Zone Image Interactive -->
+        <div class="hero-image">
+            <div class="interactive-container">
+                <img src="elea_travail.png" alt="Éléa au travail" id="heroImg">
+
+                <!-- Hotspots -->
+                <div class="hotspot" style="top: 10%; left: 30%; width: 45%; height: 50%;">
+                    <div class="tooltip tooltip-top">
+                        <span class="tooltip-arrow"></span>
+                        <span class="tooltip-text" data-fr="Éléa, c'est moi !" data-en="Éléa, that's me!">Éléa, c'est moi !</span>
+                    </div>
+                </div>
+
+                <div class="hotspot" style="top: 55%; left: 18%; width: 12%; height: 12%;">
+                    <div class="tooltip tooltip-left">
+                        <span class="tooltip-arrow"></span>
+                        +33 06 41 95 78 03
+                    </div>
+                </div>
+
+                <div class="hotspot" style="top: 61%; left: 10%; width: 25%; height: 22%;">
+                    <div class="tooltip tooltip-top">
+                        <span class="tooltip-arrow"></span>
+                        <span class="tooltip-text" data-fr="Le nid de mes idées & concepts ✨" data-en="The home of my ideas & concepts ✨">Le nid de mes idées & concepts ✨</span>
+                    </div>
+                </div>
+
+                <div class="hotspot" style="top: 74%; left: 30%; width: 18%; height: 22%;">
+                    <div class="tooltip tooltip-bottom">
+                        <span class="tooltip-arrow"></span>
+                        <span class="tooltip-text" data-fr="Streamer & gamer à mes heures 🎮" data-en="Streamer & gamer in my free time 🎮">Streamer & gamer à mes heures 🎮</span>
+                    </div>
+                </div>
+
+                <div class="hotspot" style="top: 67%; left: 34%; width: 22%; height: 15%;">
+                    <div class="tooltip tooltip-right">
+                        <span class="tooltip-arrow"></span>
+                        <span class="tooltip-text" data-fr="Imagination décuplée quand j'écris et je lis 📖" data-en="Unbounded imagination when reading and writing 📖">Imagination décuplée quand j'écris et je lis 📖</span>
+                    </div>
+                </div>
+
+                <div class="hotspot" style="top: 61%; left: 68%; width: 12%; height: 14%;">
+                    <div class="tooltip tooltip-top">
+                        <span class="tooltip-arrow"></span>
+                        <span class="tooltip-text" data-fr="Action ! 📸" data-en="Action! 📸">Action ! 📸</span>
+                    </div>
+                </div>
+
+                <div class="hotspot" style="top: 48%; left: 70%; width: 28%; height: 28%;">
+                    <div class="tooltip tooltip-top">
+                        <span class="tooltip-arrow"></span>
+                        <span class="tooltip-text" data-fr="Ça bosse ici ! 💻" data-en="Hard at work here! 💻">Ça bosse ici ! 💻</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- 1. Machine à écrire ---
+        const words = ["hello,", "你好,", "안녕하세요,", "hola,", "hallo,", "こんにちは,", "bonjour,"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById("typewriter");
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 60 : 100;
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 3000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 400;
+            }
+            setTimeout(type, typeSpeed);
+        }
+        document.addEventListener("DOMContentLoaded", type);
+
+        // --- 2. Éléments DOM & Traductions ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const heroImg = document.getElementById('heroImg');
+        const introText = document.getElementById('intro-text');
+        const heroDesc = document.getElementById('hero-desc');
+        const translatableElements = document.querySelectorAll('[data-fr]');
+
+        const translations = {
+            fr: { intro: "Je m'appelle", desc: "Designer et créatrice curieuse, j’aime toucher à tout, explorer de nouvelles idées et créer au gré de mes envies." },
+            en: { intro: "My name is", desc: "Curious designer and builder, I love trying new things, exploring fresh ideas, and creating whatever sparks my imagination." }
+        };
+
+        // --- 3. Fonctions d'application de la Langue ---
+        function applyLanguage(lang) {
+            langEn.classList.toggle('active', lang === 'en');
+            langFr.classList.toggle('active', lang === 'fr');
+
+            if (introText) introText.textContent = translations[lang].intro;
+            if (heroDesc) heroDesc.textContent = translations[lang].desc;
+
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        // --- 4. Fonctions d'application du Thème ---
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggleBtn.textContent = '☀︎';
+                if (heroImg) heroImg.src = 'elea_travail_black.png';
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggleBtn.textContent = '⏾';
+                if (heroImg) heroImg.src = 'elea_travail.png';
+            }
+        }
+
+        // --- 5. Chargement Initial des Préférences Récupérées ---
+        let currentLang = localStorage.getItem('site_lang') || 'fr';
+        let currentTheme = localStorage.getItem('site_theme') || 'light';
+
+        applyLanguage(currentLang);
+        applyTheme(currentTheme);
+
+        // --- 6. Événements au clic (avec Sauvegarde) ---
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('site_lang', currentLang);
+            applyLanguage(currentLang);
+        });
+
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('site_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Édition - Portfolio Éléa</title>
+    <!-- Polices Google Fonts : Montserrat & Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="edition.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-icons">
+            <!-- Icône Maison (Accueil) -->
+            <a href="index.html" class="home-icon" aria-label="Accueil">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+
+            <!-- Icône Portfolio (Grille) -->
+            <a href="portfolio.html" class="home-icon" aria-label="Portfolio">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"/>
+                </svg>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="cv-video.html" data-fr="CV vidéo" data-en="Video Resume">CV vidéo</a>
+        </nav>
+
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Titre déroulant -->
+    <div class="edition-title-container">
+        <div class="dropdown-header" id="dropdownToggle">
+            <h1 class="page-title">edition</h1>
+            <span class="arrow-icon">▼</span>
+        </div>
+        
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="#grain-de-folie">UN GRAIN DE FOLIE</a></li>
+        </ul>
+    </div>
+
+    <!-- PROJET 1 : UN GRAIN DE FOLIE -->
+    <section class="project-section last-section" id="grain-de-folie">
+        <div class="project-layout">
+            <div class="col-left">
+                <h2 class="project-title">Un grain de folie</h2>
+                <p class="project-description" 
+                   data-fr='"Un grain de folie" est un magazine pour artistes qui plonge le lecteur dans des visuels fantaisistes et métaphoriques. La couverture montre un esprit en pleine ébullition créative, où idées et émotions se mélangent, chaque élément représentant les métaphores de l’imaginaire. Le magazine explore le monde de l’art à travers les portraits d’artistes, les visites de musées, les détails d’œuvres et les découvertes de nouvelles créations, célébrant la créativité sous toutes ses formes.' 
+                   data-en='"Un grain de folie" is an artists’ magazine that immerses the reader in whimsical and metaphorical visuals. The cover depicts a mind brimming with creative energy, where ideas and emotions intertwine, with each element representing metaphors of the imagination. The magazine explores the art world through artist portraits, museum visits, close-up details of artworks, and discoveries of new creations, celebrating creativity in all its forms.'>
+                    "Un grain de folie" est un magazine pour artistes qui plonge le lecteur dans des visuels fantaisistes et métaphoriques. La couverture montre un esprit en pleine ébullition créative, où idées et émotions se mélangent, chaque élément représentant les métaphores de l’imaginaire. Le magazine explore le monde de l’art à travers les portraits d’artistes, les visites de musées, les détails d’œuvres et les découvertes de nouvelles créations, célébrant la créativité sous toutes ses formes.
+                </p>
+                <div class="stars-left-container">
+                    <img src="etoiles_combinees.png" alt="Étoiles" id="starsLeftImg1" class="star-gif-combined">
+                </div>
+            </div>
+
+            <div class="col-center">
+                <img src="grain_de_folie_cover.png" alt="Couverture Un grain de folie" class="magazine-cover">
+            </div>
+
+            <div class="col-right">
+                <div class="star-top">
+                    <img src="etoile_contour.png" alt="Étoile contour" id="starTopImg1" class="star-gif-top">
+                </div>
+                
+                <div class="project-info">
+                    <div class="software-tags">
+                        <img src="adobe_rose.png" alt="Logiciels Adobe" id="adobeIconsImg1" class="adobe-icons-img">
+                    </div>
+                    <span class="project-type" data-fr="Projet scolaire" data-en="School project">Projet scolaire</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Défilés de doubles pages (.png) -->
+        <div class="carousel-container">
+            <!-- Ligne 1 : Gauche à Droite -->
+            <div class="carousel-track marquee-left-to-right">
+                <div class="carousel-slide"><img src="UGDF_page1.png" alt="Double page 1"></div>
+                <div class="carousel-slide"><img src="UGDF_page2.png" alt="Double page 2"></div>
+                <div class="carousel-slide"><img src="UGDF_page3.png" alt="Double page 3"></div>
+                <!-- Doublons pour la boucle infinie -->
+                <div class="carousel-slide"><img src="UGDF_page1.png" alt="Double page 1"></div>
+                <div class="carousel-slide"><img src="UGDF_page2.png" alt="Double page 2"></div>
+                <div class="carousel-slide"><img src="UGDF_page3.png" alt="Double page 3"></div>
+            </div>
+
+            <!-- Ligne 2 : Droite à Gauche -->
+            <div class="carousel-track marquee-right-to-left">
+                <div class="carousel-slide"><img src="UGDF_page4.png" alt="Double page 4"></div>
+                <div class="carousel-slide"><img src="UGDF_page5.png" alt="Double page 5"></div>
+                <div class="carousel-slide"><img src="UGDF_page6.png" alt="Double page 6"></div>
+                <!-- Doublons pour la boucle infinie -->
+                <div class="carousel-slide"><img src="UGDF_page4.png" alt="Double page 4"></div>
+                <div class="carousel-slide"><img src="UGDF_page5.png" alt="Double page 5"></div>
+                <div class="carousel-slide"><img src="UGDF_page6.png" alt="Double page 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // --- 1. Menu Déroulant ---
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdownToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('open');
+        });
+
+        dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownToggle.classList.remove('active');
+                dropdownMenu.classList.remove('open');
+            });
+        });
+
+        // --- 2. Synchronisation Langue & Mode Sombre ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const translatableElements = document.querySelectorAll('[data-fr]');
+
+        function applyLanguage(lang) {
+            langEn.classList.toggle('active', lang === 'en');
+            langFr.classList.toggle('active', lang === 'fr');
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            themeToggleBtn.textContent = isDark ? '☀︎' : '⏾';
+
+            // Les étoiles restent identiques en mode nuit ; seules les icônes Adobe changent
+            const adobeIcons = document.querySelectorAll('.adobe-icons-img');
+            adobeIcons.forEach(img => img.src = isDark ? 'adobe_jaune.png' : 'adobe_rose.png');
+        }
+
+        let currentLang = localStorage.getItem('site_lang') || 'fr';
+        let currentTheme = localStorage.getItem('site_theme') || 'light';
+
+        applyLanguage(currentLang);
+        applyTheme(currentTheme);
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('site_lang', currentLang);
+            applyLanguage(currentLang);
+        });
+
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('site_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logofolio - Portfolio Éléa</title>
+    <!-- Polices Google Fonts : Montserrat & Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="logofolio.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="nav-icons">
+            <!-- Icône Maison (Accueil) -->
+            <a href="index.html" class="home-icon" aria-label="Accueil">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+
+            <!-- Icône Portfolio (Grille) -->
+            <a href="portfolio.html" class="home-icon" aria-label="Portfolio">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"/>
+                </svg>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="cv-video.html" data-fr="CV vidéo" data-en="Video Resume">CV vidéo</a>
+        </nav>
+
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Titre déroulant -->
+    <div class="edition-title-container">
+        <div class="dropdown-header" id="dropdownToggle">
+            <h1 class="page-title">logofolio</h1>
+            <span class="arrow-icon">▼</span>
+        </div>
+        
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="#pomelo">POMELO</a></li>
+            <li><a href="#azeleae">AZELEAE</a></li>
+            <li><a href="#agence-cerise">AGENCE CERISE</a></li>
+            <li><a href="#elea-mayor">ELEA MAYOR</a></li>
+            <li><a href="#studio-elma">STUDIO ELMA</a></li>
+            <li><a href="#itinereves">ITINÉREVES</a></li>
+            <li><a href="#purgo">PUR'GO</a></li>
+            <li><a href="#tomo">TOMO</a></li>
+            <li><a href="#declik">DECLIK</a></li>
+        </ul>
+    </div>
+
+    <!-- ENCART COLORÉ COMPACT ET CENTRÉ -->
+    <section class="intro-banner">
+        <div class="intro-content">
+            <p data-fr="Je présente ici une sélection de logos imaginés pour des projets fictifs et réels. Chaque création explore un univers différent, avec une identité qui lui est propre, adaptée à son activité, son public et son style."
+               data-en="Here I present a selection of logos designed for fictional and real projects. Each creation explores a different universe, with its own unique identity tailored to its activity, audience, and style.">
+               Je présente ici une sélection de logos imaginés pour des projets fictifs et réels. Chaque création explore un univers différent, avec une identité qui lui est propre, adaptée à son activité, son public et son style.
+            </p>
+        </div>
+    </section>
+
+    <!-- BANDEAU DÉFILANT CONTINU -->
+    <div class="logos-marquee-container">
+        <div class="logos-track" id="logosTrack">
+            <a href="#pomelo" class="marquee-item"><img src="pomelo.png" alt="Logo Pomelo"></a>
+            <a href="#azeleae" class="marquee-item"><img src="azeleae.png" alt="Logo Azeleae"></a>
+            <a href="#agence-cerise" class="marquee-item"><img src="agence_cerise.png" alt="Logo Agence Cerise"></a>
+            <a href="#elea-mayor" class="marquee-item"><img src="elea_mayor.png" alt="Logo Elea Mayor"></a>
+            <a href="#studio-elma" class="marquee-item"><img src="studio_elma.png" alt="Logo Studio Elma" class="marquee-logo-elma"></a>
+            <a href="#itinereves" class="marquee-item"><img src="itinereves.png" alt="Logo Itinéreves"></a>
+            <a href="#purgo" class="marquee-item"><img src="purgo.png" alt="Logo Pur'go"></a>
+            <a href="#tomo" class="marquee-item"><img src="tomo.png" alt="Logo Tomo"></a>
+            <a href="#declik" class="marquee-item"><img src="declik.png" alt="Logo Declik"></a>
+        </div>
+    </div>
+
+    <hr class="project-divider">
+
+    <!-- SCROLLYTELLING VERTICAL -->
+    <section class="scrollytelling-wrapper" id="scrollyWrapper">
+        <div class="scrolly-sticky-viewport">
+            <div class="scrolly-header">
+                <span class="scrolly-counter" id="scrollyCounter">01 / 09</span>
+                <p class="scrolly-hint" data-fr="Faites défiler pour explorer" data-en="Scroll down to explore">Faites défiler pour explorer</p>
+            </div>
+
+            <div class="scrolly-stage" id="scrollyStage">
+                
+                <!-- Slide 1 : POMELO -->
+                <article class="scrolly-slide is-active" id="pomelo">
+                    <div class="scrolly-logo-box">
+                        <img src="pomelo.png" alt="Logo Pomelo" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=POMELO'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Identité visuelle imaginée pour une agence de communication fictive" data-en="Visual identity designed for a fictional communication agency">Identité visuelle imaginée pour une agence de communication fictive</p>
+                </article>
+
+                <!-- Slide 2 : AZELEAE -->
+                <article class="scrolly-slide" id="azeleae">
+                    <div class="scrolly-logo-box">
+                        <img src="azeleae.png" alt="Logo Azeleae" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=AZELEAE'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Identité graphique créée pour ma chaîne Twitch" data-en="Graphic identity created for my Twitch channel">Identité graphique créée pour ma chaîne Twitch</p>
+                </article>
+
+                <!-- Slide 3 : AGENCE CERISE -->
+                <article class="scrolly-slide" id="agence-cerise">
+                    <div class="scrolly-logo-box">
+                        <img src="agence_cerise.png" alt="Logo Agence Cerise" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=AGENCE+CERISE'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Logo conçu pour une agence de communication et de design fictive" data-en="Logo designed for a fictional communication and design agency">Logo conçu pour une agence de communication et de design fictive</p>
+                </article>
+
+                <!-- Slide 4 : ELEA MAYOR -->
+                <article class="scrolly-slide" id="elea-mayor">
+                    <div class="scrolly-logo-box">
+                        <img src="elea_mayor.png" alt="Logo Elea Mayor" class="logo-small" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=ELEA+MAYOR'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Signature personnelle et monogramme d’Éléa Mayor" data-en="Personal signature and monogram of Éléa Mayor">Signature personnelle et monogramme d’Éléa Mayor</p>
+                </article>
+
+                <!-- Slide 5 : STUDIO ELMA -->
+                <article class="scrolly-slide" id="studio-elma">
+                    <div class="scrolly-logo-box">
+                        <img src="studio_elma.png" alt="Logo Studio Elma" class="logo-small" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=STUDIO+ELMA'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Identité de marque pour mon studio de projets créatifs" data-en="Brand identity for my creative projects studio">Identité de marque pour mon studio de projets créatifs</p>
+                </article>
+
+                <!-- Slide 6 : ITINÉREVES -->
+                <article class="scrolly-slide" id="itinereves">
+                    <div class="scrolly-logo-box">
+                        <img src="itinereves.png" alt="Logo Itinéreves" class="logo-small" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=ITINEREVES'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Logotype réalisé pour l’association étudiante Erasmus de mon école" data-en="Logotype created for my school's Erasmus student association">Logotype réalisé pour l’association étudiante Erasmus de mon école</p>
+                </article>
+
+                <!-- Slide 7 : PUR'GO -->
+                <article class="scrolly-slide" id="purgo">
+                    <div class="scrolly-logo-box">
+                        <img src="purgo.png" alt="Logo Pur'go" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=PUR\'GO'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Logo imaginé pour une gamme de soins dédiée aux sportifs" data-en="Logo imagined for a skincare line dedicated to athletes">Logo imaginé pour une gamme de soins dédiée aux sportifs</p>
+                </article>
+
+                <!-- Slide 8 : TOMO -->
+                <article class="scrolly-slide" id="tomo">
+                    <div class="scrolly-logo-box">
+                        <img src="tomo.png" alt="Logo Tomo" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=TOMO'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Identité visuelle conçue pour une application fictive de randonnée urbaine" data-en="Visual identity designed for a fictional urban hiking application">Identité visuelle conçue pour une application fictive de randonnée urbaine</p>
+                </article>
+
+                <!-- Slide 9 : DECLIK -->
+                <article class="scrolly-slide" id="declik">
+                    <div class="scrolly-logo-box">
+                        <img src="declik.png" alt="Logo Declik" onerror="this.src='https://via.placeholder.com/400x180/ffffff/222222?text=DECLIK'">
+                    </div>
+                    <p class="logo-bottom-caption" data-fr="Logotype développé pour une agence de communication fictive" data-en="Logotype developed for a fictional communication agency">Logotype développé pour une agence de communication fictive</p>
+                </article>
+
+            </div>
+
+            <!-- Barre de progression verticale à droite de l'écran -->
+            <div class="scrolly-progress-bar">
+                <div class="scrolly-progress-fill" id="scrollyProgressFill"></div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="project-divider">
+
+    <!-- GRILLE RÉCAPITULATIVE DE FIN DE PAGE -->
+    <section class="all-logos-grid-section">
+        <div class="all-logos-grid">
+            <a href="#pomelo" class="grid-logo-item"><img src="pomelo.png" alt="Pomelo"></a>
+            <a href="#azeleae" class="grid-logo-item"><img src="azeleae.png" alt="Azeleae"></a>
+            <a href="#agence-cerise" class="grid-logo-item"><img src="agence_cerise.png" alt="Agence Cerise"></a>
+            <a href="#elea-mayor" class="grid-logo-item"><img src="elea_mayor.png" alt="Elea Mayor"></a>
+            <a href="#studio-elma" class="grid-logo-item"><img src="studio_elma.png" alt="Studio Elma"></a>
+            <a href="#itinereves" class="grid-logo-item"><img src="itinereves.png" alt="Itinéreves"></a>
+            <a href="#purgo" class="grid-logo-item"><img src="purgo.png" alt="Pur'go"></a>
+            <a href="#tomo" class="grid-logo-item"><img src="tomo.png" alt="Tomo"></a>
+            <a href="#declik" class="grid-logo-item"><img src="declik.png" alt="Declik"></a>
+        </div>
+    </section>
+
+    <script>
+        // --- Duplication automatique du bandeau infini ---
+        const track = document.getElementById('logosTrack');
+        track.innerHTML += track.innerHTML;
+
+        // --- Animation Scrollytelling Vertical ---
+        const scrollyWrapper = document.getElementById('scrollyWrapper');
+        const slides = Array.from(document.querySelectorAll('.scrolly-slide'));
+        const scrollyCounter = document.getElementById('scrollyCounter');
+        const scrollyProgressFill = document.getElementById('scrollyProgressFill');
+
+        function handleScrollytelling() {
+            const rect = scrollyWrapper.getBoundingClientRect();
+            const scrollableDistance = scrollyWrapper.offsetHeight - window.innerHeight;
+            
+            if (scrollableDistance <= 0) return;
+
+            let progress = -rect.top / scrollableDistance;
+            progress = Math.max(0, Math.min(1, progress));
+
+            const exactSlidePos = progress * (slides.length - 1);
+            const activeIndex = Math.min(slides.length - 1, Math.round(exactSlidePos));
+
+            scrollyProgressFill.style.height = `${progress * 100}%`;
+            scrollyCounter.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+
+            slides.forEach((slide, idx) => {
+                const offset = idx - exactSlidePos;
+                const translateY = offset * 65;
+                const distance = Math.abs(offset);
+                const scale = Math.max(0.75, 1 - distance * 0.18);
+                const opacity = Math.max(0, 1 - distance * 1.15);
+
+                slide.style.transform = `translate3d(0, ${translateY}vh, 0) scale(${scale})`;
+                slide.style.opacity = opacity;
+                slide.style.pointerEvents = distance < 0.5 ? 'auto' : 'none';
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollytelling, { passive: true });
+        window.addEventListener('resize', handleScrollytelling);
+        handleScrollytelling();
+
+        // Navigation directe vers un logo précis lors d'un clic
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const targetIndex = slides.findIndex(s => s.id === targetId);
+                
+                if (targetIndex !== -1) {
+                    e.preventDefault();
+                    dropdownToggle.classList.remove('active');
+                    dropdownMenu.classList.remove('open');
+
+                    const wrapperTop = scrollyWrapper.offsetTop;
+                    const scrollableDistance = scrollyWrapper.offsetHeight - window.innerHeight;
+                    const targetProgress = targetIndex / (slides.length - 1);
+                    const targetScrollY = wrapperTop + (targetProgress * scrollableDistance);
+
+                    window.scrollTo({
+                        top: targetScrollY,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // --- Menu Déroulant ---
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdownToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownToggle.classList.remove('active');
+                dropdownMenu.classList.remove('open');
+            }
+        });
+
+        // --- Changement automatique des logos selon le thème (Jour / Nuit) ---
+        const logoImages = document.querySelectorAll('.marquee-item img, .scrolly-logo-box img, .grid-logo-item img');
+
+        function updateLogosForTheme(isDark) {
+            logoImages.forEach(img => {
+                if (!img.dataset.lightSrc) {
+                    img.dataset.lightSrc = img.getAttribute('src');
+                }
+
+                const lightSrc = img.dataset.lightSrc;
+                const darkSrc = lightSrc.replace(/(\.[^.]+)$/, 'nuit$1');
+
+                img.src = isDark ? darkSrc : lightSrc;
+            });
+        }
+
+        // --- Langue FR/EN & Thème sombre ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const translatableElements = document.querySelectorAll('[data-fr]');
+
+        function applyLanguage(lang) {
+            langEn.classList.toggle('active', lang === 'en');
+            langFr.classList.toggle('active', lang === 'fr');
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            themeToggleBtn.textContent = isDark ? '☀︎' : '⏾';
+            updateLogosForTheme(isDark);
+        }
+
+        let currentLang = localStorage.getItem('site_lang') || 'fr';
+        let currentTheme = localStorage.getItem('site_theme') || 'light';
+
+        applyLanguage(currentLang);
+        applyTheme(currentTheme);
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('site_lang', currentLang);
+            applyLanguage(currentLang);
+        });
+
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('site_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+/* Déclaration de la police locale Bootzy TM */
+@font-face {
+    font-family: 'Bootzy TM';
+    src: url('fonts/BootzyTM.woff') format('woff'),
+         url('fonts/BootzyTM.otf') format('opentype'),
+         url('fonts/BootzyTM.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variables Jour (Rose #ff8fab) */
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #222222;
+    --text-title: #1a1a1a;
+    --text-secondary: #555555;
+    --accent-color: #ff8fab;
+    --btn-bg: #ff8fab;
+    --btn-hover-bg: #ff7597;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(255, 143, 171, 0.3);
+    --btn-shadow-hover: rgba(255, 143, 171, 0.45);
+    --nav-link-color: #2b2b2b;
+}
+
+/* Variables Nuit (Jaune #fdd38b) */
+body.dark-mode {
+    --bg-color: #121214;
+    --text-primary: #f0f0f0;
+    --text-title: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-color: #fdd38b;
+    --btn-bg: #fdd38b;
+    --btn-hover-bg: #fcc263;
+    --btn-text: #121214;
+    --btn-shadow: rgba(253, 211, 139, 0.2);
+    --btn-shadow-hover: rgba(253, 211, 139, 0.35);
+    --nav-link-color: #e0e0e0;
+}
+
+/* Réinitialisation universelle */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Figtree', 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+/* Icône Maison à gauche */
+.home-icon {
+    position: absolute;
+    left: 50px;
+    width: 28px;
+    height: 28px;
+    color: var(--nav-link-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.home-icon:hover {
+    transform: scale(1.15);
+    color: var(--accent-color);
+}
+
+.home-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-links {
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    transition: opacity 0.2s, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active-link {
+    opacity: 0.6;
+}
+
+.nav-links span {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.nav-controls {
+    position: absolute;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+    color: var(--nav-link-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lang-option {
+    opacity: 0.4;
+    font-weight: 700;
+}
+
+.lang-option.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.lang-divider {
+    opacity: 0.3;
+}
+
+.theme-icon {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+/* Hero (Accueil) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    width: 100%;
+    flex-grow: 1;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 520px;
+}
+
+.greeting-container {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-title);
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.cursor {
+    color: var(--accent-color);
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.sub-greeting {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+/* --- POLICE BOOTZY TM & ESPACEMENT --- */
+.highlight-name {
+    font-family: 'Bootzy TM', cursive, sans-serif;
+    color: var(--accent-color);
+    letter-spacing: 0.05em; /* Équivalent d'un tracking de 25 sous Figma/Photoshop (Si c'est trop peu, changez par 2.5px ou 25px) */
+}
+
+.sparkle-symbol {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-left: 6px;
+    transition: color 0.4s ease;
+}
+
+.description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- BOUTONS STYLE PILULE --- */
+.links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-portfolio {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-transform: lowercase;
+    transition: transform 0.25s ease, background-color 0.3s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 15px var(--btn-shadow);
+}
+
+.btn-portfolio:hover {
+    transform: scale(1.05);
+    background-color: var(--btn-hover-bg);
+    box-shadow: 0 6px 20px var(--btn-shadow-hover);
+}
+
+/* --- IMAGE INTERACTIVE & TOOLTIPS --- */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interactive-container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.interactive-container img {
+    display: block;
+    max-width: 100%;
+    max-height: 460px;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+/* Zones de survol transparentes */
+.hotspot {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Bulle d'information */
+.tooltip {
+    position: absolute;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 8px 14px;
+    border-radius: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    box-shadow: 0 4px 15px var(--btn-shadow);
+    z-index: 20;
+}
+
+.hotspot:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Positions et animations des bulles */
+.tooltip-top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    margin-bottom: 8px;
+}
+.hotspot:hover .tooltip-top { transform: translateX(-50%) translateY(0); }
+
+.tooltip-bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    margin-top: 8px;
+}
+.hotspot:hover .tooltip-bottom { transform: translateX(-50%) translateY(0); }
+
+.tooltip-left {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-6px);
+    margin-right: 8px;
+}
+.hotspot:hover .tooltip-left { transform: translateY(-50%) translateX(0); }
+
+.tooltip-right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    margin-left: 8px;
+}
+.hotspot:hover .tooltip-right { transform: translateY(-50%) translateX(0); }
+
+/* Flèches des bulles */
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.tooltip-top .tooltip-arrow {
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0 6px;
+    border-color: var(--btn-bg) transparent transparent transparent;
+}
+
+.tooltip-bottom .tooltip-arrow {
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent var(--btn-bg) transparent;
+}
+
+.tooltip-left .tooltip-arrow {
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-color: transparent transparent transparent var(--btn-bg);
+}
+
+.tooltip-right .tooltip-arrow {
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px 6px 6px 0;
+    border-color: transparent var(--btn-bg) transparent transparent;
+}
+
+/* Adaptabilité Écrans Mobiles */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .greeting-container, .links {
+        justify-content: center;
+    }
+}

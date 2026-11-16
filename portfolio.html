@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio - Éléa</title>
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@400;500;700;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+
+    <!-- Tracés décoratifs SVG animés -->
+    <div class="decorations-container" aria-hidden="true">
+
+        <svg class="decor-svg decor-top-left"
+             viewBox="0 0 500 400"
+             fill="none">
+
+            <path
+                class="draw-path path-top-left"
+                d="M -20 250 C 150 220 200 100 120 110 C 50 120 80 230 220 180 C 300 150 320 -20 320 -50"
+                stroke="currentColor"
+                stroke-width="14"
+                stroke-linecap="round"
+            />
+
+        </svg>
+
+        <svg class="decor-svg decor-bottom-right"
+             viewBox="0 0 500 500"
+             fill="none">
+
+            <path
+                class="draw-path path-bottom-right"
+                d="M 520 220 C 350 280 320 400 180 410 C 60 420 80 520 80 550"
+                stroke="currentColor"
+                stroke-width="14"
+                stroke-linecap="round"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <!-- Header -->
+    <header class="navbar">
+
+        <a href="index.html"
+           class="home-icon"
+           aria-label="Accueil">
+
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="contact.html"
+               data-fr="Contact"
+               data-en="Contact">
+                Contact
+            </a>
+
+            <span>•</span>
+
+            <a href="presentation.html"
+               data-fr="Présentation"
+               data-en="About">
+                Présentation
+            </a>
+
+            <span>•</span>
+
+            <a href="cv-video.html"
+               data-fr="CV vidéo"
+               data-en="Video Resume">
+                CV vidéo
+            </a>
+
+        </nav>
+
+
+        <div class="nav-controls">
+
+            <button
+                id="lang-toggle"
+                class="control-btn"
+                aria-label="Changer de langue"
+                type="button"
+            >
+
+                <span id="lang-fr" class="lang-option active">FR</span>
+
+                <span class="lang-divider">|</span>
+
+                <span id="lang-en" class="lang-option">EN</span>
+
+            </button>
+
+
+            <button
+                id="theme-toggle"
+                class="control-btn theme-icon"
+                aria-label="Changer de thème"
+                type="button"
+            >
+                ⏾
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Zone orbitale centrale -->
+    <main class="portfolio-hero">
+
+        <div class="orbit-scene">
+
+            <h1
+                class="portfolio-title"
+                data-fr="Portfolio"
+                data-en="Portfolio"
+            >
+                Portfolio
+            </h1>
+
+
+            <!-- Orbite des mots-clés -->
+            <div class="keyword-orbit" id="orbit">
+
+                <a href="edition.html"
+                   class="keyword"
+                   data-fr="Édition"
+                   data-en="Publishing">
+
+                    <span class="kw-text">Édition</span>
+
+                </a>
+
+
+                <a href="impression.html"
+                   class="keyword"
+                   data-fr="Impression"
+                   data-en="Print">
+
+                    <span class="kw-text">Impression</span>
+
+                </a>
+
+
+                <a href="identitevisuelle.html"
+                   class="keyword"
+                   data-fr="Identités visuelles"
+                   data-en="Visual identities">
+
+                    <span class="kw-text">Identités visuelles</span>
+
+                </a>
+
+
+                <a href="logofolio.html"
+                   class="keyword"
+                   data-fr="Logofolio"
+                   data-en="Logofolio">
+
+                    <span class="kw-text">Logofolio</span>
+
+                </a>
+
+
+                <a href="multimedia.html"
+                   class="keyword"
+                   data-fr="Multimédia"
+                   data-en="Multimedia">
+
+                    <span class="kw-text">Multimédia</span>
+
+                </a>
+
+                <a href="redaction.html"
+                   class="keyword"
+                   data-fr="Rédaction"
+                   data-en="Writing">
+
+                    <span class="kw-text">Rédaction</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <script>
+
+        // ==========================================
+        // 1. ANIMATION ORBITALE 3D (avec reprise de position)
+        // ==========================================
+
+        const keywords = Array.from(
+            document.querySelectorAll('.keyword')
+        );
+
+        const total = keywords.length;
+
+        // Récupère l'angle enregistré dans la session du navigateur, ou 0 par défaut
+        let angle = parseFloat(sessionStorage.getItem('portfolio_orbit_angle')) || 0;
+        let isPaused = false;
+
+        const radiusX = 360;
+        const radiusY = 180;
+        const tiltAngle = -0.25;
+
+
+        // Positionnement 3D des mots
+        function update3DPositions() {
+
+            if (!isPaused) {
+                angle += 0.004;
+                // Sauvegarde l'angle en temps réel dans le sessionStorage
+                sessionStorage.setItem('portfolio_orbit_angle', angle);
+            }
+
+            keywords.forEach((kw, index) => {
+
+                const itemAngle =
+                    angle + (index * (2 * Math.PI / total));
+
+                const rawX = Math.cos(itemAngle) * radiusX;
+                const rawY = Math.sin(itemAngle) * radiusY;
+
+                const x =
+                    rawX * Math.cos(tiltAngle)
+                    - rawY * Math.sin(tiltAngle);
+
+                const y =
+                    rawX * Math.sin(tiltAngle)
+                    + rawY * Math.cos(tiltAngle);
+
+                const z = Math.sin(itemAngle);
+
+
+                // Profondeur et apparence
+                const scale = 0.65 + (z + 1) * 0.25;
+
+                const opacity = 0.45 + (z + 1) * 0.28;
+
+                const blur = Math.max(0, (1 - z) * 1.2);
+
+
+                // Transformation 3D
+                kw.style.transform = `
+                    translate(-50%, -50%)
+                    translate3d(${x}px, ${y}px, ${z * 100}px)
+                    scale(${scale})
+                `;
+
+                kw.style.opacity = opacity;
+
+                kw.style.filter = `blur(${blur}px)`;
+
+                kw.style.zIndex = Math.round((z + 1) * 100);
+
+
+                // Les liens restent interactifs
+                kw.style.pointerEvents = 'auto';
+                kw.style.cursor = 'pointer';
+
+            });
+
+
+            requestAnimationFrame(update3DPositions);
+
+        }
+
+
+        update3DPositions();
+
+
+
+        // ==========================================
+        // 2. GESTION DES MOTS AU SURVOL
+        // ==========================================
+
+        keywords.forEach(kw => {
+
+            kw.addEventListener('mouseenter', () => {
+
+                isPaused = true;
+
+                document.body.classList.add('keyword-hovered');
+
+                kw.classList.add('active-target');
+
+            });
+
+
+            kw.addEventListener('mouseleave', () => {
+
+                isPaused = false;
+
+                document.body.classList.remove('keyword-hovered');
+
+                kw.classList.remove('active-target');
+
+            });
+
+        });
+
+
+
+        // ==========================================
+        // 3. GESTION DE LA LANGUE FR / EN
+        // ==========================================
+
+        const langToggleBtn =
+            document.getElementById('lang-toggle');
+
+        const langFr =
+            document.getElementById('lang-fr');
+
+        const langEn =
+            document.getElementById('lang-en');
+
+        const translatableElements =
+            document.querySelectorAll('[data-fr]');
+
+
+        function applyLanguage(lang) {
+
+            langEn.classList.toggle('active', lang === 'en');
+
+            langFr.classList.toggle('active', lang === 'fr');
+
+
+            translatableElements.forEach(el => {
+
+                const textSpan =
+                    el.querySelector('.kw-text') || el;
+
+                textSpan.textContent =
+                    el.getAttribute(`data-${lang}`);
+
+            });
+
+
+            document.documentElement.lang = lang;
+
+        }
+
+
+
+        // ==========================================
+        // 4. GESTION DU MODE SOMBRE
+        // ==========================================
+
+        const themeToggleBtn =
+            document.getElementById('theme-toggle');
+
+
+        function applyTheme(theme) {
+
+            if (theme === 'dark') {
+
+                document.body.classList.add('dark-mode');
+
+                themeToggleBtn.textContent = '☀︎';
+
+            } else {
+
+                document.body.classList.remove('dark-mode');
+
+                themeToggleBtn.textContent = '⏾';
+
+            }
+
+        }
+
+
+
+        // ==========================================
+        // 5. SAUVEGARDE DES PRÉFÉRENCES
+        // ==========================================
+
+        let currentLang =
+            localStorage.getItem('site_lang') || 'fr';
+
+        let currentTheme =
+            localStorage.getItem('site_theme') || 'light';
+
+
+        applyLanguage(currentLang);
+
+        applyTheme(currentTheme);
+
+
+
+        // Bouton de langue
+        langToggleBtn.addEventListener('click', () => {
+
+            currentLang =
+                currentLang === 'fr' ? 'en' : 'fr';
+
+            localStorage.setItem('site_lang', currentLang);
+
+            applyLanguage(currentLang);
+
+        });
+
+
+
+        // Bouton de thème
+        themeToggleBtn.addEventListener('click', () => {
+
+            currentTheme =
+                document.body.classList.contains('dark-mode')
+                    ? 'light'
+                    : 'dark';
+
+            localStorage.setItem('site_theme', currentTheme);
+
+            applyTheme(currentTheme);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

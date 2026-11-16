@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressions - Portfolio Éléa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="impression.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-icons">
+            <a href="index.html" class="home-icon" aria-label="Accueil">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+
+            <a href="portfolio.html" class="home-icon" aria-label="Portfolio">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"/>
+                </svg>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="cv-video.html" data-fr="CV vidéo" data-en="Video Resume">CV vidéo</a>
+        </nav>
+
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Titre déroulant -->
+    <div class="edition-title-container">
+        <div class="dropdown-header" id="dropdownToggle">
+            <h1 class="page-title">impressions</h1>
+            <span class="arrow-icon">▼</span>
+        </div>
+
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="#print" data-fr="Print" data-en="Print">Print</a></li>
+            <li><a href="#flyers" data-fr="Flyers" data-en="Flyers">Flyers</a></li>
+        </ul>
+    </div>
+
+    <main class="impressions-content">
+        <!-- SECTION PRINT -->
+        <section class="category-section" id="print">
+            <h2 class="category-title" data-fr="Print" data-en="Print">Print</h2>
+
+            <div class="gallery-grid">
+                <!-- Poster 1 -->
+                <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="poster1.png" alt="Poster 1" onerror="this.classList.add('img-error')">
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="flip-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poster 2 -->
+                <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="poster2.png" alt="Poster 2" onerror="this.classList.add('img-error')">
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="flip-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poster 3 -->
+                <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="poster3.png" alt="Poster 3" onerror="this.classList.add('img-error')">
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="flip-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poster 4 -->
+                <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="poster4.png" alt="Poster 4" onerror="this.classList.add('img-error')">
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="flip-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poster 5 -->
+                <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="poster5.png" alt="Poster 5" onerror="this.classList.add('img-error')">
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="flip-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poster 6 -->
+                <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="poster6.png" alt="Poster 6" onerror="this.classList.add('img-error')">
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="flip-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poster 7 -->
+                <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="poster7.png" alt="Poster 7" onerror="this.classList.add('img-error')">
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="flip-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poster 8 -->
+                <div class="flip-card" tabindex="0" role="button" aria-pressed="false">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="poster8.png" alt="Poster 8" onerror="this.classList.add('img-error')">
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="flip-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="project-divider">
+
+        <!-- SECTION FLYERS -->
+        <section class="category-section last-section" id="flyers">
+            <h2 class="category-title" data-fr="Flyers" data-en="Flyers">Flyers</h2>
+
+            <div class="project-section">
+                <div class="project-layout">
+                    <div class="col-left">
+                        <h3 class="project-title">Faut-il être fou pour créer ?</h3>
+
+                        <p class="project-description"
+                           data-fr="Dans le cadre du projet Philomag, j’ai conçu un flyer A5 recto-verso autour de la question philosophique « Faut-il être fou pour créer ? ». J’ai joué sur le contraste entre un univers classique et une explosion de couleurs pour symboliser l’opposition entre les normes sociales et la liberté créative. L’objectif était de questionner les idées reçues sur la créativité à travers une composition graphique expressive et percutante."
+                           data-en="As part of the Philomag project, I designed a double-sided A5 flyer around the philosophical question, “Do you have to be crazy to create?”. I played on the contrast between a classic world and an explosion of colours to represent the opposition between social norms and creative freedom. The aim was to challenge preconceived ideas about creativity through an expressive and striking graphic composition.">
+                            Dans le cadre du projet Philomag, j’ai conçu un flyer A5 recto-verso autour de la question philosophique « Faut-il être fou pour créer ? ». J’ai joué sur le contraste entre un univers classique et une explosion de couleurs pour symboliser l’opposition entre les normes sociales et la liberté créative. L’objectif était de questionner les idées reçues sur la créativité à travers une composition graphique expressive et percutante.
+                        </p>
+
+                        <div class="stars-left-container">
+                            <img src="etoiles_combinees.gif" alt="Étoiles" class="star-gif-combined">
+                        </div>
+                    </div>
+
+                    <div class="col-center transparent-bg-cover">
+                        <img src="flyer1.png" alt="Flyer Philomag" class="magazine-cover flyer-large-img" onerror="this.classList.add('img-error')">
+                    </div>
+
+                    <div class="col-right">
+                        <div class="star-top">
+                            <img src="etoile_contour.png" alt="Étoile contour" class="star-gif-top">
+                        </div>
+
+                        <div class="project-info">
+                            <div class="software-tags">
+                                <img src="adobe_rose.png" alt="Logiciels Adobe" class="adobe-icons-img">
+                            </div>
+
+                            <span class="project-type" data-fr="Projet scolaire" data-en="School project">Projet scolaire</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // --- Menu déroulant ---
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdownToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('open');
+        });
+
+        dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownToggle.classList.remove('active');
+                dropdownMenu.classList.remove('open');
+            });
+        });
+
+        // --- Retournement des posters ---
+        const flipCards = document.querySelectorAll('.flip-card');
+
+        flipCards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+
+                const isFlipped = card.classList.contains('flipped');
+                card.setAttribute('aria-pressed', isFlipped ? 'true' : 'false');
+            });
+
+            card.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    card.click();
+                }
+            });
+        });
+
+        // --- Langue et thème ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const translatableElements = document.querySelectorAll('[data-fr]');
+
+        function applyLanguage(lang) {
+            langEn.classList.toggle('active', lang === 'en');
+            langFr.classList.toggle('active', lang === 'fr');
+
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+
+            document.body.classList.toggle('dark-mode', isDark);
+            themeToggleBtn.textContent = isDark ? '☀︎' : '⏾';
+
+            document.querySelectorAll('.star-gif-combined').forEach(img => {
+                img.src = isDark ? 'etoiles_combinees.png' : 'etoiles_combinees.png';
+            });
+
+            document.querySelectorAll('.star-gif-top').forEach(img => {
+                img.src = isDark ? 'etoile_contour.png' : 'etoile_contour.png';
+            });
+
+            document.querySelectorAll('.adobe-icons-img').forEach(img => {
+                img.src = isDark ? 'adobe_jaune.png' : 'adobe_rose.png';
+            });
+        }
+
+        let currentLang = localStorage.getItem('site_lang') || 'fr';
+        let currentTheme = localStorage.getItem('site_theme') || 'light';
+
+        applyLanguage(currentLang);
+        applyTheme(currentTheme);
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('site_lang', currentLang);
+            applyLanguage(currentLang);
+        });
+
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('site_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    </script>
+</body>
+</html>

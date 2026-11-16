@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starter Pack - Éléa</title>
+    <!-- Import des polices Google Fonts : Figtree & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="starter.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <a href="index.html" class="home-icon" aria-label="Accueil">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
+
+        <nav class="nav-links">
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="portfolio.html" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
+        </nav>
+
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Zone Principale 3D -->
+    <main class="main-container">
+        <div class="scene">
+            <div class="card-3d" id="card3d">
+                <!-- Face Recto -->
+                <div class="card-face card-front">
+                    <img src="starter1.png" alt="Starter Pack - Recto" id="imgFront">
+                </div>
+                <!-- Face Verso -->
+                <div class="card-face card-back">
+                    <img src="starter2.png" alt="Starter Pack - Verso">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bouton Flottant CV PDF (Bas Droit) -->
+    <div class="bottom-actions">
+        <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-portfolio" data-fr="cv pdf" data-en="cv pdf">cv pdf</a>
+    </div>
+
+    <script>
+        // --- 1. Interaction Rotation 3D (Souris & Tactile) ---
+        const card = document.getElementById('card3d');
+        const scene = document.querySelector('.scene');
+
+        let isDragging = false;
+        let previousMouseX = 0;
+        let previousMouseY = 0;
+        let rotX = 0;
+        let rotY = 0;
+
+        function startDrag(e) {
+            isDragging = true;
+            card.classList.add('is-dragging');
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            previousMouseX = clientX;
+            previousMouseY = clientY;
+        }
+
+        function doDrag(e) {
+            if (!isDragging) return;
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            
+            const deltaX = clientX - previousMouseX;
+            const deltaY = clientY - previousMouseY;
+
+            rotY += deltaX * 0.6;
+            rotX -= deltaY * 0.6;
+
+            card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+
+            previousMouseX = clientX;
+            previousMouseY = clientY;
+        }
+
+        function stopDrag() {
+            if (isDragging) {
+                isDragging = false;
+                card.classList.remove('is-dragging');
+            }
+        }
+
+        scene.addEventListener('mousedown', startDrag);
+        window.addEventListener('mousemove', doDrag);
+        window.addEventListener('mouseup', stopDrag);
+
+        scene.addEventListener('touchstart', startDrag, { passive: true });
+        window.addEventListener('touchmove', doDrag, { passive: true });
+        window.addEventListener('touchend', stopDrag);
+
+        // --- 2. Éléments DOM & Traductions ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const translatableElements = document.querySelectorAll('[data-fr]');
+
+        // --- 3. Langue ---
+        function applyLanguage(lang) {
+            langEn.classList.toggle('active', lang === 'en');
+            langFr.classList.toggle('active', lang === 'fr');
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        // --- 4. Thème (Clair / Nuit) ---
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggleBtn.textContent = '☀︎';
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggleBtn.textContent = '⏾';
+            }
+        }
+
+        // --- 5. Chargement Initial ---
+        let currentLang = localStorage.getItem('site_lang') || 'fr';
+        let currentTheme = localStorage.getItem('site_theme') || 'light';
+
+        applyLanguage(currentLang);
+        applyTheme(currentTheme);
+
+        // --- 6. Événements au Clic ---
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('site_lang', currentLang);
+            applyLanguage(currentLang);
+        });
+
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('site_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+
+        // --- 7. Ajustement automatique des dimensions selon l'image ---
+        const imgFront = document.getElementById('imgFront');
+        function adjustCardSize() {
+            if (imgFront.complete && imgFront.naturalWidth > 0) {
+                card.style.width = imgFront.clientWidth + 'px';
+                card.style.height = imgFront.clientHeight + 'px';
+            }
+        }
+        if (imgFront.complete) {
+            adjustCardSize();
+        } else {
+            imgFront.addEventListener('load', adjustCardSize);
+        }
+        window.addEventListener('resize', adjustCardSize);
+    </script>
+</body>
+</html>

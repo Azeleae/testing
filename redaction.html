@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept & Rédaction - Portfolio Éléa</title>
+    <!-- Polices Google Fonts : Montserrat & Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="redaction.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-icons">
+            <!-- Icône Maison (Accueil) -->
+            <a href="index.html" class="home-icon" aria-label="Accueil">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+
+            <!-- Icône Portfolio (Grille) -->
+            <a href="portfolio.html" class="home-icon" aria-label="Portfolio">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"/>
+                </svg>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="cv-video.html" data-fr="CV vidéo" data-en="Video Resume">CV vidéo</a>
+        </nav>
+
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Titre déroulant "concept & rédaction" -->
+    <div class="edition-title-container">
+        <div class="dropdown-header" id="dropdownToggle">
+            <h1 class="page-title">concept & rédaction</h1>
+            <span class="arrow-icon">▼</span>
+        </div>
+        
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="#canal" data-fr="Campagne CANAL+" data-en="CANAL+ Campaign">Campagne CANAL+</a></li>
+            <li><a href="#accroche" data-fr="Accroche verbal" data-en="Verbal Hook">Accroche verbal</a></li>
+        </ul>
+    </div>
+
+    <main class="redaction-content">
+
+        <!-- SECTION 1 : CAMPAGNE CANAL+ -->
+        <section class="redaction-section" id="canal">
+            <div class="layout-canal">
+                <!-- Visual Grid Left -->
+                <div class="canal-media-grid">
+                    <div class="canal-main-billboard">
+                        <img src="canal_odyssey.png" alt="Canal+ The Odyssey Billboard" onerror="this.classList.add('img-error')">
+                    </div>
+                    <div class="canal-sub-grid">
+                        <div class="canal-sub-item">
+                            <img src="canal_spiderman.png" alt="Canal+ Spider-Man" onerror="this.classList.add('img-error')">
+                        </div>
+                        <div class="canal-sub-item">
+                            <img src="canal_toystory.png" alt="Canal+ Toy Story 5" onerror="this.classList.add('img-error')">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="canal-text-content">
+                    <h2 class="section-heading" data-fr="Campagne<br>CANAL+" data-en="CANAL+<br>Campaign">Campagne<br>CANAL+</h2>
+                    <div class="text-paragraphs">
+                        <p data-fr="Conception d'une campagne d’affichage pour annoncer l’arrivée des films récents sur CANAL+ en seulement 6 mois. L’objectif est de démontrer que l’attente est finalement très courte. Pour cela, les accroches détournent des références cultes du cinéma et de la pop culture." data-en="Design of a billboard campaign announcing the release of recent movies on CANAL+ in just 6 months. The goal is to show that the wait is short by twisting iconic cinema and pop culture references.">
+                            Conception d'une campagne d’affichage pour annoncer l’arrivée des films récents sur CANAL+ en seulement 6 mois. L’objectif est de démontrer que l’attente est finalement très courte. Pour cela, les accroches détournent des références cultes du cinéma et de la pop culture.
+                        </p>
+                        <p data-fr="L’humour permet de créer un décalage amusant entre les histoires connues de tous et l’arrivée rapide des grands succès du cinéma sur la plateforme. Le but est de susciter l’envie tout en rendant cette attente plus légère et ludique pour les spectateurs." data-en="Humor helps create a playful gap between famous stories and the quick arrival of blockbuster movies on the platform, making the wait lighter and more engaging.">
+                            L’humour permet de créer un décalage amusant entre les histoires connues de tous et l’arrivée rapide des grands succès du cinéma sur la plateforme. Le but est de susciter l’envie tout en rendant cette attente plus légère et ludique pour les spectateurs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Séparateur pleine largeur -->
+        <hr class="project-divider">
+
+        <!-- SECTION 2 : CAMPAGNE ACCROCHE VERBAL -->
+        <section class="redaction-section last-section" id="accroche">
+            <div class="layout-accroche">
+                <!-- Text Left -->
+                <div class="accroche-text-content">
+                    <h2 class="section-heading" data-fr="Campagne<br>Accroche verbal" data-en="Verbal Hook<br>Campaign">Campagne<br>Accroche verbal</h2>
+                    <div class="text-paragraphs">
+                        <p data-fr="Création d'accroches publicitaires sur-mesure pour différentes marques. Chaque accroche se veut originale, percutante et parfaitement cohérente avec l’identité ainsi que le positionnement de la marque." data-en="Creation of custom advertising taglines for various brands. Each hook is designed to be original, impactful, and aligned with the brand's unique identity.">
+                            Création d'accroches publicitaires sur-mesure pour différentes marques. Chaque accroche se veut originale, percutante et parfaitement cohérente avec l’identité ainsi que le positionnement de la marque.
+                        </p>
+                        <p data-fr="Le principe repose sur le jeu de mots, l'utilisation d’expressions populaires et le double sens. Chaque création associe une formule choc, un fond coloré minimaliste et le logo officiel pour faire passer un message efficace et mémorable." data-en="The concept plays with popular expressions, double meanings, and wordplay. Each layout combines a punchy line, a minimalist colored background, and the brand logo to deliver an effective message.">
+                            Le principe repose sur le jeu de mots, l'utilisation d’expressions populaires et le double sens. Chaque création associe une formule choc, un fond coloré minimaliste et le logo officiel pour faire passer un message efficace et mémorable.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Unique Image Right -->
+                <div class="accroche-single-image">
+                    <img src="accroches.png" alt="Accroches verbales - Campagne marques" class="full-accroche-img" onerror="this.classList.add('img-error')">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Menu Déroulant
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdownToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('open');
+        });
+
+        dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownToggle.classList.remove('active');
+                dropdownMenu.classList.remove('open');
+            });
+        });
+
+        // Langue & Mode Sombre
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const translatableElements = document.querySelectorAll('[data-fr]');
+
+        function applyLanguage(lang) {
+            langEn.classList.toggle('active', lang === 'en');
+            langFr.classList.toggle('active', lang === 'fr');
+            translatableElements.forEach(el => {
+                const targetText = el.getAttribute(`data-${lang}`);
+                if (targetText) el.innerHTML = targetText;
+            });
+        }
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            themeToggleBtn.textContent = isDark ? '☀︎' : '⏾';
+        }
+
+        let currentLang = localStorage.getItem('site_lang') || 'fr';
+        let currentTheme = localStorage.getItem('site_theme') || 'light';
+
+        applyLanguage(currentLang);
+        applyTheme(currentTheme);
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('site_lang', currentLang);
+            applyLanguage(currentLang);
+        });
+
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('site_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    </script>
+</body>
+</html>

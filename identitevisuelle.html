@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identité Visuelle - Portfolio Éléa</title>
+    <!-- Polices Google Fonts : Montserrat & Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="identitevisuelle.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-icons">
+            <!-- Icône Maison (Accueil) -->
+            <a href="index.html" class="home-icon" aria-label="Accueil">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+
+            <!-- Icône Portfolio (Grille) -->
+            <a href="portfolio.html" class="home-icon" aria-label="Portfolio">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"/>
+                </svg>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="cv-video.html" data-fr="CV vidéo" data-en="Video Resume">CV vidéo</a>
+        </nav>
+
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Titre déroulant "identité visuelle" avec flèche -->
+    <div class="edition-title-container">
+        <div class="dropdown-header" id="dropdownToggle">
+            <h1 class="page-title" data-fr="identité visuelle" data-en="visual identity">identité visuelle</h1>
+            <span class="arrow-icon">▼</span>
+        </div>
+        
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="#identite" data-fr="Identité visuelle" data-en="Visual Identity">Identité visuelle</a></li>
+        </ul>
+    </div>
+
+    <!-- Texte introductif centré et justifié -->
+    <div class="identity-intro-container">
+        <p class="identity-intro-text" data-fr="J’aime imaginer des univers visuels qui donnent vie aux idées et racontent une histoire. À travers mes identités visuelles, j’explore différentes ambiances, couleurs, typographies et formes pour créer des univers uniques, pensés pour refléter la personnalité de chaque projet. Qu’il s’agisse de créations fictives ou de projets réels, chaque réalisation est pour moi l’occasion d’expérimenter, d’imaginer et de laisser parler ma créativité." data-en="I love imagining visual worlds that bring ideas to life and tell a story...">
+            J’aime imaginer des univers visuels qui donnent vie aux idées et racontent une histoire. À travers mes identités visuelles, j’explore différentes ambiances, couleurs, typographies et formes pour créer des univers uniques, pensés pour refléter la personnalité de chaque projet. Qu’il s’agisse de créations fictives ou de projets réels, chaque réalisation est pour moi l’occasion d’expérimenter, d’imaginer et de laisser parler ma créativité.
+        </p>
+    </div>
+
+    <!-- Contenu Principal (3 encarts carrés interactifs) -->
+    <main class="identity-fullscreen-content">
+        <div class="identity-grid">
+            
+            <!-- Encart 1 -->
+            <a href="identite1.html" class="identity-card" aria-label="Identité 1">
+                <img src="identite1.png" alt="Identité Visuelle 1" onerror="this.classList.add('img-error')">
+            </a>
+
+            <!-- Encart 2 (Pur'Go) -->
+            <a href="identite2.html" class="identity-card" aria-label="Pur'Go">
+                <img src="identite2.png" alt="Identité Visuelle 2" onerror="this.classList.add('img-error')">
+            </a>
+
+            <!-- Encart 3 (Azélaé Twitch) -->
+            <a href="identite3.html" class="identity-card" aria-label="Azélaé Twitch">
+                <img src="identite3.png" alt="Identité Visuelle 3" onerror="this.classList.add('img-error')">
+            </a>
+
+        </div>
+    </main>
+
+    <script>
+        // --- 1. Menu Déroulant ---
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdownToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('open');
+        });
+
+        dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownToggle.classList.remove('active');
+                dropdownMenu.classList.remove('open');
+            });
+        });
+
+        // --- 2. Synchronisation Langue & Mode Sombre ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const translatableElements = document.querySelectorAll('[data-fr]');
+
+        function applyLanguage(lang) {
+            langEn.classList.toggle('active', lang === 'en');
+            langFr.classList.toggle('active', lang === 'fr');
+            translatableElements.forEach(el => {
+                if(el.getAttribute(`data-${lang}`)) {
+                    el.textContent = el.getAttribute(`data-${lang}`);
+                }
+            });
+        }
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            themeToggleBtn.textContent = isDark ? '☀︎' : '⏾';
+        }
+
+        let currentLang = localStorage.getItem('site_lang') || 'fr';
+        let currentTheme = localStorage.getItem('site_theme') || 'light';
+
+        applyLanguage(currentLang);
+        applyTheme(currentTheme);
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('site_lang', currentLang);
+            applyLanguage(currentLang);
+        });
+
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('site_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    </script>
+</body>
+</html>

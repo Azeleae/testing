@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Éléa</title>
+    <!-- Import des polices Google Fonts : Montserrat & Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <!-- Element Audio (Son de téléphone) -->
+    <audio id="phoneAudio" src="telephone.mp3" preload="auto"></audio>
+
+    <!-- Téléphone suspendu à gauche (Cliquable) -->
+    <div class="phone-hanging-container" id="phoneContainer">
+        <img src="telephone.png" alt="Téléphone Contact" id="phoneImg" class="phone-hanging-img">
+    </div>
+
+    <!-- Header -->
+    <header class="navbar">
+        <!-- Bouton Retour Accueil (Maison SVG) -->
+        <a href="index.html" class="home-icon" aria-label="Accueil">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
+
+        <nav class="nav-links">
+            <a href="contact.html" class="active-link" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="#pdf" data-fr="PDF" data-en="PDF">PDF</a>
+        </nav>
+
+        <!-- Contrôles : Langue & Mode Sombre -->
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Contenu Principal -->
+    <main class="contact-container">
+        <!-- Titre principal -->
+        <h1 class="page-title" data-fr="contact" data-en="contact">contact</h1>
+
+        <!-- Texte de présentation en Montserrat -->
+        <div class="contact-text">
+            <p class="subtitle" data-fr="Une question ou envie d'échanger ?" data-en="A question or want to get in touch?">
+                Une question ou envie d'échanger ?
+            </p>
+            <p class="description" data-fr="Si vous souhaitez en savoir plus sur mon parcours, mes projets ou discuter d’un éventuel stage ou alternance, n’hésitez pas à me contacter." data-en="If you would like to know more about my background, my projects, or discuss a potential internship or work-study position, feel free to reach out.">
+                Si vous souhaitez en savoir plus sur mon parcours, mes projets ou discuter d’un éventuel stage ou alternance, n’hésitez pas à me contacter.
+            </p>
+        </div>
+
+        <!-- Formulaire de mail -->
+        <form class="contact-form" action="https://formspree.io/f/xnpjdywk" method="POST">
+            <div class="form-group">
+                <label for="email" data-fr="adresse mail" data-en="email address">adresse mail</label>
+                <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject" data-fr="objet" data-en="subject">objet</label>
+                <input type="text" id="subject" name="_subject" placeholder="Sujet de votre message..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="message" data-fr="écrivez votre texte ici" data-en="write your text here">écrivez votre texte ici</label>
+                <textarea id="message" name="message" rows="4" placeholder="Bonjour Éléa..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit" data-fr="envoyer" data-en="send">envoyer</button>
+        </form>
+    </main>
+
+    <script>
+        // --- DOM Elements ---
+        const phoneContainer = document.getElementById('phoneContainer');
+        const phoneAudio = document.getElementById('phoneAudio');
+        const phoneImg = document.getElementById('phoneImg');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        
+        // Form inputs
+        const emailInput = document.getElementById('email');
+        const subjectInput = document.getElementById('subject');
+        const messageInput = document.getElementById('message');
+
+        // --- Récupération des préférences sauvegardées ---
+        let isDarkMode = localStorage.getItem('theme') === 'dark';
+        let currentLang = localStorage.getItem('lang') || 'fr';
+
+        const placeholders = {
+            fr: {
+                email: "votre.email@exemple.com",
+                subject: "Sujet de votre message...",
+                message: "Bonjour Éléa..."
+            },
+            en: {
+                email: "your.email@example.com",
+                subject: "Subject of your message...",
+                message: "Hello Éléa..."
+            }
+        };
+
+        // --- Application initiale ---
+        function applySavedSettings() {
+            // Appliquer Thème
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                themeToggleBtn.textContent = '☀︎';
+                if (phoneImg) phoneImg.src = 'telephone_black.png';
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggleBtn.textContent = '⏾';
+                if (phoneImg) phoneImg.src = 'telephone.png';
+            }
+
+            // Appliquer Langue
+            langEn.classList.toggle('active', currentLang === 'en');
+            langFr.classList.toggle('active', currentLang === 'fr');
+            translatePage();
+        }
+
+        // --- Traduction de la page ---
+        function translatePage() {
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const translation = el.getAttribute(`data-${currentLang}`);
+                if (translation) {
+                    if (el.children.length === 0) {
+                        el.textContent = translation;
+                    } else {
+                        const firstText = Array.from(el.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+                        if (firstText) firstText.nodeValue = translation;
+                    }
+                }
+            });
+
+            // Update placeholders
+            if (emailInput) emailInput.placeholder = placeholders[currentLang].email;
+            if (subjectInput) subjectInput.placeholder = placeholders[currentLang].subject;
+            if (messageInput) messageInput.placeholder = placeholders[currentLang].message;
+        }
+
+        // --- Audio Téléphone ---
+        if (phoneAudio) phoneAudio.volume = 0.25;
+
+        if (phoneContainer && phoneAudio) {
+            phoneContainer.addEventListener('click', () => {
+                phoneAudio.currentTime = 0;
+                phoneAudio.play();
+            });
+        }
+
+        // --- Switch Thème & Sauvegarde ---
+        themeToggleBtn.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            themeToggleBtn.textContent = isDarkMode ? '☀︎' : '⏾';
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+            if (phoneImg) {
+                phoneImg.src = isDarkMode ? 'telephone_black.png' : 'telephone.png';
+            }
+        });
+
+        // --- Switch Langue & Sauvegarde ---
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('lang', currentLang);
+
+            langEn.classList.toggle('active', currentLang === 'en');
+            langFr.classList.toggle('active', currentLang === 'fr');
+
+            translatePage();
+        });
+
+        // Initialiser au chargement
+        applySavedSettings();
+    </script>
+</body>
+</html>

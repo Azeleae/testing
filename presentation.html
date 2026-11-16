@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Présentation - Éléa Mayor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="presentation.css">
+</head>
+
+<body class="light-mode scroll-locked">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="home-icon" aria-label="Accueil">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
+
+        <nav class="nav-links" aria-label="Navigation principale">
+            <a
+                href="index.html#contact"
+                data-fr="Contact"
+                data-en="Contact"
+            >
+                Contact
+            </a>
+
+            <span aria-hidden="true">•</span>
+
+            <a
+                href="presentation.html"
+                class="active-link"
+                aria-current="page"
+                data-fr="Présentation"
+                data-en="About"
+            >
+                Présentation
+            </a>
+
+            <span aria-hidden="true">•</span>
+
+            <a href="index.html#pdf" data-fr="PDF" data-en="PDF">
+                PDF
+            </a>
+        </nav>
+
+        <div class="nav-controls">
+            <button
+                type="button"
+                id="lang-toggle"
+                class="control-btn"
+                aria-label="Switch to English"
+            >
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider" aria-hidden="true">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+
+            <button
+                type="button"
+                id="theme-toggle"
+                class="control-btn theme-icon"
+                aria-label="Activer le mode sombre"
+                aria-pressed="false"
+            >
+                ⏾
+            </button>
+        </div>
+    </header>
+
+    <!-- ZONE DE SCROLL -->
+    <div class="scrolly-spacer" id="scrollySpacer">
+
+        <main class="interactive-stage" id="stage1">
+            <div class="scene-container" id="sceneContainer">
+
+                <!-- Dossier central -->
+                <button
+                    type="button"
+                    class="folder-wrapper"
+                    id="folderWrapper"
+                    aria-label="Ouvrir le dossier de présentation"
+                    aria-expanded="false"
+                >
+                    <img
+                        src="dossier_rose.png"
+                        alt=""
+                        class="folder-img"
+                        id="folderMainImg"
+                    >
+
+                    <span
+                        class="folder-label"
+                        data-fr="ouvrez-moi"
+                        data-en="open me"
+                    >
+                        ouvrez-moi
+                    </span>
+                </button>
+
+                <!-- Texte d'accueil -->
+                <div
+                    class="item-text-greeting desk-item"
+                    id="itemGreeting"
+                    data-top="22"
+                    data-left="15"
+                    aria-hidden="true"
+                >
+                    <span
+                        class="txt-bonjour"
+                        data-fr="Bonjour !"
+                        data-en="Hello!"
+                    >
+                        Bonjour !
+                    </span>
+
+                    <span
+                        class="txt-jesuis"
+                        data-fr="je suis..."
+                        data-en="I am..."
+                    >
+                        je suis...
+                    </span>
+                </div>
+
+                <!-- Dossier -->
+                <img
+                    src="dossier.png"
+                    alt="Dossier de présentation"
+                    class="desk-item item-dossier"
+                    id="itemDossier"
+                    data-top="50"
+                    data-left="20"
+                    data-img-fr-light="dossier.png"
+                    data-img-fr-dark="dossierblack.png"
+                    data-img-en-light="dossieranglais.png"
+                    data-img-en-dark="dossierblackanglais.png"
+                    aria-hidden="true"
+                >
+
+                <!-- À propos de moi -->
+                <img
+                    src="propos.png"
+                    alt="À propos de moi"
+                    class="desk-item item-propos shadow-light"
+                    id="itemPropos"
+                    data-top="78"
+                    data-left="18"
+                    data-img-fr-light="propos.png"
+                    data-img-fr-dark="proposblack.png"
+                    data-img-en-light="proposanglais.png"
+                    data-img-en-dark="proposblackanglais.png"
+                    aria-hidden="true"
+                >
+
+                <!-- Photo + Compétences -->
+                <div
+                    class="desk-item item-photo-group"
+                    id="itemPhotoGroup"
+                    data-top="54"
+                    data-left="50"
+                    aria-hidden="true"
+                >
+                    <img
+                        src="photo.png"
+                        alt="Éléa Mayor"
+                        class="photo-img"
+                        id="itemPhoto"
+                        data-img-fr-light="photo.png"
+                        data-img-fr-dark="photoblack.png"
+                        data-img-en-light="photoanglais.png"
+                        data-img-en-dark="photoblackanglais.png"
+                    >
+
+                    <img
+                        src="competences.png"
+                        alt="Compétences"
+                        class="competences-overlay"
+                        id="itemCompetences"
+                        data-img-fr-light="competences.png"
+                        data-img-fr-dark="competencesblack.png"
+                        data-img-en-light="competencesanglais.png"
+                        data-img-en-dark="competencesblackanglais.png"
+                    >
+                </div>
+
+                <!-- Expériences -->
+                <img
+                    src="experiences.png"
+                    alt="Expériences"
+                    class="desk-item item-experiences shadow-light"
+                    id="itemExperiences"
+                    data-top="40"
+                    data-left="82"
+                    data-img-fr-light="experiences.png"
+                    data-img-fr-dark="experiencesblack.png"
+                    data-img-en-light="experiencesanglais.png"
+                    data-img-en-dark="experiencesblackanglais.png"
+                    aria-hidden="true"
+                >
+
+                <!-- Contact -->
+                <img
+                    src="contact.png"
+                    alt="Contact"
+                    class="desk-item item-contact"
+                    id="itemContact"
+                    data-top="86"
+                    data-left="80"
+                    data-img-fr-light="contact.png"
+                    data-img-fr-dark="contactblack.png"
+                    data-img-en-light="contactanglais.png"
+                    data-img-en-dark="contactblackanglais.png"
+                    aria-hidden="true"
+                >
+
+            </div>
+        </main>
+    </div>
+
+    <!-- FLÈCHE DE SCROLL -->
+    <a
+        href="#passionsSection"
+        id="scrollDownArrow"
+        class="scroll-down-arrow"
+        aria-label="Descendre vers Mes passions"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <svg
+            viewBox="0 0 64 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+        >
+            <path
+                d="M32 8V84M10 62L32 84L54 62"
+                stroke="currentColor"
+                stroke-width="9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </svg>
+    </a>
+
+    <!-- PASSIONS -->
+    <section
+        class="passions-section"
+        id="passionsSection"
+        aria-labelledby="passionsTitle"
+        tabindex="-1"
+        inert
+    >
+        <div class="passions-header">
+            <h2
+                class="passions-title"
+                id="passionsTitle"
+                data-fr="Mes passions"
+                data-en="My passions"
+            >
+                Mes passions
+            </h2>
+
+            <p
+                class="passions-subtitle"
+                data-fr="Choisissez votre personnage"
+                data-en="Choose your character"
+            >
+                Choisissez votre personnage
+            </p>
+        </div>
+
+        <div class="character-select-container">
+
+            <button
+                type="button"
+                class="nav-arrow left-arrow"
+                id="prevChar"
+                aria-label="Personnage précédent"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+
+            <div class="character-display">
+                <img
+                    id="charImage"
+                    src="streameuse.png"
+                    alt="Streameuse"
+                    class="character-portrait"
+                >
+            </div>
+
+            <button
+                type="button"
+                class="nav-arrow right-arrow"
+                id="nextChar"
+                aria-label="Personnage suivant"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </button>
+
+            <!-- Fiche du personnage -->
+            <div class="character-stats-panel">
+                <h3
+                    id="charTitle"
+                    class="char-title"
+                    aria-live="polite"
+                    aria-atomic="true"
+                >
+                    Streameuse
+                </h3>
+
+                <p id="charDescription" class="char-description"></p>
+
+                <div class="char-objective">
+                    <strong data-fr="OBJECTIF :" data-en="GOAL:">
+                        OBJECTIF :
+                    </strong>
+
+                    <span id="charObjective"></span>
+                </div>
+
+                <!-- Expérience -->
+                <div class="stat-group">
+                    <span
+                        class="stat-label"
+                        id="experienceLabel"
+                        data-fr="Expérience"
+                        data-en="Experience"
+                    >
+                        Expérience
+                    </span>
+
+                    <div
+                        class="progress-bar-bg"
+                        id="experienceBar"
+                        role="progressbar"
+                        aria-labelledby="experienceLabel"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="65"
+                    >
+                        <div
+                            id="charExp"
+                            class="progress-bar-fill"
+                            style="width: 65%;"
+                        ></div>
+                    </div>
+                </div>
+
+                <!-- Compétence -->
+                <div class="stat-group">
+                    <span
+                        class="stat-label"
+                        id="skillLabel"
+                        data-fr="Compétence"
+                        data-en="Skill"
+                    >
+                        Compétence
+                    </span>
+
+                    <div
+                        class="progress-bar-bg"
+                        id="skillBar"
+                        role="progressbar"
+                        aria-labelledby="skillLabel"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="75"
+                    >
+                        <div
+                            id="charSkill"
+                            class="progress-bar-fill"
+                            style="width: 75%;"
+                        ></div>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <div class="tools-group">
+                    <span
+                        class="tools-label"
+                        data-fr="Outils"
+                        data-en="Tools"
+                    >
+                        Outils
+                    </span>
+
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <img
+                                id="tool1"
+                                src="outils-streameuse1.png"
+                                alt="Outil 1"
+                            >
+                        </div>
+
+                        <div class="tool-card">
+                            <img
+                                id="tool2"
+                                src="outils-streameuse2.png"
+                                alt="Outil 2"
+                            >
+                        </div>
+
+                        <div class="tool-card">
+                            <img
+                                id="tool3"
+                                src="outils-streameuse3.png"
+                                alt="Outil 3"
+                            >
+                        </div>
+
+                        <div class="tool-card">
+                            <img
+                                id="tool4"
+                                src="outils-streameuse4.png"
+                                alt="Outil 4"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Éléments de la page
+        const folderWrapper = document.getElementById('folderWrapper');
+        const folderMainImg = document.getElementById('folderMainImg');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+
+        const deskItems = document.querySelectorAll('.desk-item');
+        const scrollySpacer = document.getElementById('scrollySpacer');
+        const scrollDownArrow = document.getElementById('scrollDownArrow');
+        const passionsSection = document.getElementById('passionsSection');
+
+        const charImage = document.getElementById('charImage');
+        const charTitle = document.getElementById('charTitle');
+        const charDescription = document.getElementById('charDescription');
+        const charObjective = document.getElementById('charObjective');
+        const charExp = document.getElementById('charExp');
+        const charSkill = document.getElementById('charSkill');
+
+        const experienceBar = document.getElementById('experienceBar');
+        const skillBar = document.getElementById('skillBar');
+
+        const toolImages = [
+            document.getElementById('tool1'),
+            document.getElementById('tool2'),
+            document.getElementById('tool3'),
+            document.getElementById('tool4')
+        ];
+
+        const prevBtn = document.getElementById('prevChar');
+        const nextBtn = document.getElementById('nextChar');
+
+        const reducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        );
+
+        function readSetting(key, fallback) {
+            try {
+                return localStorage.getItem(key) || fallback;
+            } catch {
+                return fallback;
+            }
+        }
+
+        function saveSetting(key, value) {
+            try {
+                localStorage.setItem(key, value);
+            } catch {
+                // Le site reste utilisable sans stockage local.
+            }
+        }
+
+        let isDarkMode = readSetting('theme', 'light') === 'dark';
+        let currentLang = readSetting('lang', 'fr') === 'en' ? 'en' : 'fr';
+
+        let isOpen = false;
+        let arrowReady = false;
+        let currentCharacterIndex = 0;
+        let characterTimer;
+        let scrollFramePending = false;
+
+        // Personnages
+        const characters = [
+            {
+                id: 'streameuse',
+                title: {
+                    fr: 'Streameuse',
+                    en: 'Streamer'
+                },
+                img: 'streameuse.png',
+                desc: {
+                    fr: "Le streaming est pour moi une façon de développer ma confiance en moi tout en réunissant plusieurs de mes passions : la vidéo, les jeux vidéo et le partage. C'est l'occasion de créer du contenu, d'échanger avec une communauté et de vivre des moments conviviaux autour de centres d'intérêt communs. Avant tout, je souhaite prendre plaisir à partager et à faire découvrir mon univers.",
+                    en: "Streaming is a way for me to build self-confidence while combining several of my passions: video, gaming, and sharing. It gives me the opportunity to create content, connect with a community, and enjoy friendly moments around shared interests. Above all, I want to enjoy sharing and introducing people to my world."
+                },
+                objective: {
+                    fr: "Avoir une communauté de 50 viewers",
+                    en: "Build a community of 50 viewers"
+                },
+                exp: 65,
+                skill: 75,
+                tools: [
+                    'outils-streameuse1.png',
+                    'outils-streameuse2.png',
+                    'outils-streameuse3.png',
+                    'outils-streameuse4.png'
+                ]
+            },
+            {
+                id: 'photographe',
+                title: {
+                    fr: 'Photographe',
+                    en: 'Photographer'
+                },
+                img: 'photographe.png',
+                desc: {
+                    fr: "Depuis longtemps, j'aime avoir un appareil photo ou mon téléphone à portée de main pour immortaliser les moments qui m'entourent, particulièrement lors de mes voyages à travers le monde. Pour moi, la photographie est une façon de conserver une trace de chaque instant.",
+                    en: "I've always loved having a camera or my phone close at hand to capture the moments around me, especially while traveling the world. For me, photography is a way to preserve a memory of each moment."
+                },
+                objective: {
+                    fr: "Immortaliser des moments sur chaque continent (2/5)",
+                    en: "Capture moments on every continent (2/5)"
+                },
+                exp: 80,
+                skill: 60,
+                tools: [
+                    'outils-photographe1.png',
+                    'outils-photographe2.png',
+                    'outils-photographe3.png',
+                    'outils-photographe4.png'
+                ]
+            },
+            {
+                id: 'voyageuse',
+                title: {
+                    fr: 'Voyageuse',
+                    en: 'Traveler'
+                },
+                img: 'voyageuse.png',
+                desc: {
+                    fr: "J'ai toujours aimé voyager avec un objectif qui va au-delà de la simple découverte, notamment à travers l'aide à la personne et les rencontres humaines. Mes expériences à Madagascar et au Cambodge ont été particulièrement marquantes, riches en émotions.",
+                    en: "I've always loved traveling with a purpose beyond simply discovering new places, particularly through helping others and meaningful human encounters. My experiences in Madagascar and Cambodia were especially memorable and full of emotion."
+                },
+                objective: {
+                    fr: "Partir en Amérique du Sud pour aider des personnes dans le besoin",
+                    en: "Travel to South America to help people in need"
+                },
+                exp: 90,
+                skill: 85,
+                tools: [
+                    'outils-voyageuse1.png',
+                    'outils-voyageuse2.png',
+                    'outils-voyageuse3.png',
+                    'outils-voyageuse4.png'
+                ]
+            },
+            {
+                id: 'artiste',
+                title: {
+                    fr: 'Artiste',
+                    en: 'Artist'
+                },
+                img: 'artiste.png',
+                desc: {
+                    fr: "J'aime explorer différentes formes d'art, du dessin à la peinture, en passant par de nombreuses autres techniques créatives. Sans me spécialiser dans un domaine en particulier, j'aime expérimenter, apprendre et découvrir de nouvelles façons de créer.",
+                    en: "I love exploring different forms of art, from drawing and painting to many other creative techniques. Rather than specializing in one particular field, I enjoy experimenting, learning, and discovering new ways to create."
+                },
+                objective: {
+                    fr: "Réussir à dessiner les perspectives",
+                    en: "Master perspective drawing"
+                },
+                exp: 70,
+                skill: 50,
+                tools: [
+                    'outils-artiste1.png',
+                    'outils-artiste2.png',
+                    'outils-artiste3.png',
+                    'outils-artiste4.png'
+                ]
+            },
+            {
+                id: 'ecrivaine',
+                title: {
+                    fr: 'Écrivaine',
+                    en: 'Writer'
+                },
+                img: 'ecrivaine.png',
+                desc: {
+                    fr: "J'écris depuis l'âge de 10 ans, poussée par l'envie de m'évader du monde réel et de créer mes propres univers imaginaires. Au fil des années, j'ai donné naissance à de nombreux récits pour explorer de nouveaux horizons.",
+                    en: "I've been writing since the age of 10, driven by the desire to escape the real world and create my own imaginary universes. Over the years, I've brought many stories to life to explore new horizons."
+                },
+                objective: {
+                    fr: "Publier mon premier roman",
+                    en: "Publish my first novel"
+                },
+                exp: 85,
+                skill: 70,
+                tools: [
+                    'outils-ecrivaine1.png',
+                    'outils-ecrivaine2.png',
+                    'outils-ecrivaine3.png',
+                    'outils-ecrivaine4.png'
+                ]
+            }
+        ];
+
+        // Images selon la langue et le thème
+        function updateImages() {
+            folderMainImg.src = isDarkMode
+                ? 'dossier_jaune.png'
+                : 'dossier_rose.png';
+
+            document.querySelectorAll('[data-img-fr-light]').forEach(img => {
+                const attribute = `data-img-${currentLang}-${
+                    isDarkMode ? 'dark' : 'light'
+                }`;
+
+                const source = img.getAttribute(attribute);
+
+                if (source) {
+                    img.src = source;
+                }
+            });
+        }
+
+        // Thème
+        function applyTheme() {
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            document.body.classList.toggle('light-mode', !isDarkMode);
+
+            themeToggleBtn.textContent = isDarkMode ? '☀︎' : '⏾';
+
+            themeToggleBtn.setAttribute(
+                'aria-pressed',
+                String(isDarkMode)
+            );
+
+            const label = currentLang === 'fr'
+                ? (
+                    isDarkMode
+                        ? 'Activer le mode clair'
+                        : 'Activer le mode sombre'
+                )
+                : (
+                    isDarkMode
+                        ? 'Switch to light mode'
+                        : 'Switch to dark mode'
+                );
+
+            themeToggleBtn.setAttribute('aria-label', label);
+
+            updateImages();
+        }
+
+        // Affichage du personnage
+        function updateCharacterDisplay(animate = true) {
+            clearTimeout(characterTimer);
+
+            const renderCharacter = () => {
+                const character = characters[currentCharacterIndex];
+
+                charImage.src = character.img;
+                charImage.alt = character.title[currentLang];
+
+                charTitle.textContent = character.title[currentLang];
+                charDescription.textContent = character.desc[currentLang];
+                charObjective.textContent = character.objective[currentLang];
+
+                charExp.style.width = `${character.exp}%`;
+                charSkill.style.width = `${character.skill}%`;
+
+                experienceBar.setAttribute(
+                    'aria-valuenow',
+                    character.exp
+                );
+
+                skillBar.setAttribute(
+                    'aria-valuenow',
+                    character.skill
+                );
+
+                toolImages.forEach((img, index) => {
+                    img.src = character.tools[index];
+
+                    img.alt = currentLang === 'fr'
+                        ? `Outil ${index + 1} — ${character.title.fr}`
+                        : `Tool ${index + 1} — ${character.title.en}`;
+                });
+
+                charImage.classList.remove('is-changing');
+            };
+
+            if (!animate || reducedMotion.matches) {
+                renderCharacter();
+                return;
+            }
+
+            charImage.classList.add('is-changing');
+            characterTimer = setTimeout(renderCharacter, 180);
+        }
+
+        // Traductions
+        function applyLanguage() {
+            document.documentElement.lang = currentLang;
+
+            document.title = currentLang === 'fr'
+                ? 'Présentation - Éléa Mayor'
+                : 'About - Éléa Mayor';
+
+            langFr.classList.toggle('active', currentLang === 'fr');
+            langEn.classList.toggle('active', currentLang === 'en');
+
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+
+            langToggleBtn.setAttribute(
+                'aria-label',
+                currentLang === 'fr'
+                    ? 'Switch to English'
+                    : 'Passer en français'
+            );
+
+            folderWrapper.setAttribute(
+                'aria-label',
+                currentLang === 'fr'
+                    ? 'Ouvrir le dossier de présentation'
+                    : 'Open the presentation folder'
+            );
+
+            scrollDownArrow.setAttribute(
+                'aria-label',
+                currentLang === 'fr'
+                    ? 'Descendre vers Mes passions'
+                    : 'Scroll down to My passions'
+            );
+
+            prevBtn.setAttribute(
+                'aria-label',
+                currentLang === 'fr'
+                    ? 'Personnage précédent'
+                    : 'Previous character'
+            );
+
+            nextBtn.setAttribute(
+                'aria-label',
+                currentLang === 'fr'
+                    ? 'Personnage suivant'
+                    : 'Next character'
+            );
+
+            applyTheme();
+            updateCharacterDisplay(false);
+        }
+
+        // Affichage de la flèche
+        function updateScrollArrow() {
+            const passionsTop = passionsSection.getBoundingClientRect().top;
+
+            const shouldShow =
+                isOpen &&
+                arrowReady &&
+                passionsTop > window.innerHeight - 80;
+
+            scrollDownArrow.classList.toggle('visible', shouldShow);
+
+            scrollDownArrow.setAttribute(
+                'aria-hidden',
+                String(!shouldShow)
+            );
+
+            scrollDownArrow.tabIndex = shouldShow ? 0 : -1;
+        }
+
+        // Animation des éléments au scroll
+        function updateScene() {
+            if (!isOpen) return;
+
+            const spacerRect = scrollySpacer.getBoundingClientRect();
+
+            const scrollDistance = Math.max(
+                scrollySpacer.offsetHeight - window.innerHeight,
+                1
+            );
+
+            const progress = Math.min(
+                Math.max(-spacerRect.top / scrollDistance, 0),
+                1
+            );
+
+            deskItems.forEach(el => {
+                if (!el.classList.contains('visible')) return;
+
+                const originalTop = Number(el.dataset.top);
+                const originalLeft = Number(el.dataset.left);
+
+                const top = originalTop + (50 - originalTop) * progress;
+                const left = originalLeft + (50 - originalLeft) * progress;
+
+                const scale = 1 - progress * 0.85;
+                const opacity = 1 - Math.pow(progress, 1.5);
+
+                el.style.top = `${top}%`;
+                el.style.left = `${left}%`;
+
+                el.style.transform =
+                    `translate(-50%, -50%) scale(${scale})`;
+
+                el.style.opacity = opacity;
+            });
+
+            if (progress > 0.5) {
+                folderWrapper.classList.add('folder-returned');
+                folderWrapper.style.opacity = (progress - 0.5) * 2;
+            } else {
+                folderWrapper.classList.remove('folder-returned');
+                folderWrapper.style.opacity = 0;
+            }
+
+            updateScrollArrow();
+        }
+
+        function requestSceneUpdate() {
+            if (scrollFramePending) return;
+
+            scrollFramePending = true;
+
+            requestAnimationFrame(() => {
+                updateScene();
+                scrollFramePending = false;
+            });
+        }
+
+        // Ouverture du dossier
+        folderWrapper.addEventListener('click', () => {
+            if (isOpen) return;
+
+            isOpen = true;
+
+            document.body.classList.remove('scroll-locked');
+            passionsSection.removeAttribute('inert');
+
+            folderWrapper.setAttribute('aria-expanded', 'true');
+            folderWrapper.classList.add('folder-opening');
+
+            const startDelay = reducedMotion.matches ? 0 : 300;
+            const itemDelay = reducedMotion.matches ? 0 : 100;
+
+            deskItems.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                    el.setAttribute('aria-hidden', 'false');
+
+                    if (window.scrollY > scrollySpacer.offsetTop) {
+                        requestSceneUpdate();
+                    }
+                }, startDelay + index * itemDelay);
+            });
+
+            const revealDelay = reducedMotion.matches
+                ? 0
+                : startDelay + (deskItems.length - 1) * itemDelay + 800;
+
+            setTimeout(() => {
+                document.body.classList.add('scene-ready');
+
+                arrowReady = true;
+                updateScrollArrow();
+            }, revealDelay);
+        });
+
+        // Clic sur la flèche
+        scrollDownArrow.addEventListener('click', event => {
+            event.preventDefault();
+
+            if (!isOpen) return;
+
+            passionsSection.focus({ preventScroll: true });
+
+            passionsSection.scrollIntoView({
+                behavior: reducedMotion.matches ? 'instant' : 'smooth',
+                block: 'start'
+            });
+        });
+
+        // Navigation entre personnages
+        prevBtn.addEventListener('click', () => {
+            currentCharacterIndex =
+                (currentCharacterIndex - 1 + characters.length) %
+                characters.length;
+
+            updateCharacterDisplay();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentCharacterIndex =
+                (currentCharacterIndex + 1) % characters.length;
+
+            updateCharacterDisplay();
+        });
+
+        // Changement de thème
+        themeToggleBtn.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+
+            saveSetting('theme', isDarkMode ? 'dark' : 'light');
+            applyTheme();
+        });
+
+        // Changement de langue
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+
+            saveSetting('lang', currentLang);
+            applyLanguage();
+        });
+
+        window.addEventListener('scroll', requestSceneUpdate, {
+            passive: true
+        });
+
+        window.addEventListener('resize', requestSceneUpdate);
+
+        applyLanguage();
+        updateScrollArrow();
+    </script>
+
+</body>
+</html>

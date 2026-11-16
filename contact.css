@@ -1,0 +1,358 @@
+/* Déclaration de la police Bootzy TM */
+@font-face {
+    font-family: 'Bootzy TM';
+    src: url('BootzyTM.otf') format('opentype'),
+         url('BootzyTM.ttf') format('truetype'),
+         url('BootzyTM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variables Mode Clair (Rose) */
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #222222;
+    --text-title: #1a1a1a;
+    --text-secondary: #555555;
+    --accent-color: #ff8fab;
+    --nav-link-color: #2b2b2b;
+    
+    /* Formulaire */
+    --input-bg: #ffffff;
+    --input-border: #e8e8e8;
+    --input-focus-border: #ff8fab;
+    --input-text: #222222;
+    --input-placeholder: #a0a0a0;
+    --card-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+    --card-focus-shadow: 0 10px 26px rgba(255, 143, 171, 0.2);
+    
+    /* Bouton */
+    --btn-bg: #ff8fab;
+    --btn-hover-bg: #ff7597;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(255, 143, 171, 0.3);
+    --btn-shadow-hover: rgba(255, 143, 171, 0.45);
+}
+
+/* Variables Mode Sombre (Jaune) */
+body.dark-mode {
+    --bg-color: #121214;
+    --text-primary: #f0f0f0;
+    --text-title: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-color: #fdd38b;
+    --nav-link-color: #e0e0e0;
+    
+    /* Formulaire */
+    --input-bg: #1a1a1e;
+    --input-border: #2a2a30;
+    --input-focus-border: #fdd38b;
+    --input-text: #f0f0f0;
+    --input-placeholder: #666666;
+    --card-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+    --card-focus-shadow: 0 10px 26px rgba(253, 211, 139, 0.15);
+    
+    /* Bouton */
+    --btn-bg: #fdd38b;
+    --btn-hover-bg: #fcc263;
+    --btn-text: #121214;
+    --btn-shadow: rgba(253, 211, 139, 0.2);
+    --btn-shadow-hover: rgba(253, 211, 139, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* --- TÉLÉPHONE SUSPENDU À GAUCHE (CLIQUABLE) --- */
+.phone-hanging-container {
+    position: absolute;
+    top: 0;
+    left: 12%;
+    z-index: 50;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.phone-hanging-container:hover {
+    transform: translateY(4px);
+}
+
+.phone-hanging-img {
+    height: 60vh;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    padding: 25px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+/* Icône Maison */
+.home-icon {
+    position: absolute;
+    left: 50px;
+    width: 26px;
+    height: 26px;
+    color: var(--nav-link-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.home-icon:hover {
+    transform: scale(1.15);
+    color: var(--accent-color);
+}
+
+.home-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Liens de Navigation */
+.nav-links {
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    transition: opacity 0.2s, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active-link {
+    opacity: 0.6;
+}
+
+.nav-links span {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Contrôles à droite */
+.nav-controls {
+    position: absolute;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+    color: var(--nav-link-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lang-option {
+    opacity: 0.4;
+    font-weight: 700;
+}
+
+.lang-option.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.lang-divider {
+    opacity: 0.3;
+}
+
+.theme-icon {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+/* Contenu Page Contact */
+.contact-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px 25px 20px;
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 20;
+}
+
+/* Titre principal centré en Bootzy TM */
+.page-title {
+    font-family: 'Bootzy TM', cursive;
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 16px;
+    text-align: center;
+    text-transform: lowercase;
+    transition: color 0.4s ease;
+    line-height: 1;
+}
+
+/* Bloc Texte de présentation */
+.contact-text {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 580px;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-title);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.description {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Formulaire aéré */
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.form-group label {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-title);
+    text-transform: lowercase;
+    padding-left: 4px;
+}
+
+/* Encarts de saisie arrondis avec ombre douce */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: 1.5px solid var(--input-border);
+    border-radius: 16px;
+    padding: 12px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--input-text);
+    box-shadow: var(--card-shadow);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--input-placeholder);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: var(--card-focus-shadow);
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Bouton Envoyer */
+.btn-submit {
+    align-self: center;
+    margin-top: 6px;
+    padding: 11px 42px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 50px;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.3s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 12px var(--btn-shadow);
+}
+
+.btn-submit:hover {
+    transform: scale(1.05);
+    background-color: var(--btn-hover-bg);
+    box-shadow: 0 6px 16px var(--btn-shadow-hover);
+}
+
+/* Adaptabilité Écran Moyen / Mobile */
+@media (max-width: 1100px) {
+    .phone-hanging-container {
+        left: 3%;
+    }
+    .phone-hanging-img {
+        height: 48vh;
+    }
+}
+
+@media (max-width: 850px) {
+    html, body {
+        overflow: auto;
+        height: auto;
+    }
+    .phone-hanging-container {
+        display: none;
+    }
+    .navbar {
+        padding: 20px;
+    }
+    .home-icon { left: 20px; }
+    .nav-controls { right: 20px; }
+    .page-title { font-size: 3rem; }
+}

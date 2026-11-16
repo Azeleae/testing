@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimédia - Portfolio Éléa</title>
+    <!-- Polices Google Fonts : Montserrat & Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800;900&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="multimedia.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-icons">
+            <!-- Icône Maison (Accueil) -->
+            <a href="index.html" class="home-icon" aria-label="Accueil">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+
+            <!-- Icône Portfolio (Grille) placée à droite de la maison -->
+            <a href="portfolio.html" class="home-icon" aria-label="Portfolio">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"/>
+                </svg>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+            <span>•</span>
+            <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
+            <span>•</span>
+            <a href="cv-video.html" data-fr="CV vidéo" data-en="Video Resume">CV vidéo</a>
+        </nav>
+
+        <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" aria-label="Changer de langue">
+                <span id="lang-fr" class="lang-option active">FR</span>
+                <span class="lang-divider">|</span>
+                <span id="lang-en" class="lang-option">EN</span>
+            </button>
+            <button id="theme-toggle" class="control-btn theme-icon" aria-label="Changer de thème">⏾</button>
+        </div>
+    </header>
+
+    <!-- Titre déroulant "multimédia" -->
+    <div class="title-container">
+        <div class="dropdown-header" id="dropdownToggle">
+            <h1 class="page-title">multimédia</h1>
+            <span class="arrow-icon">▼</span>
+        </div>
+        
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="#videos" data-fr="Vidéos" data-en="Videos">Vidéos</a></li>
+            <li><a href="#photos" data-fr="Photos" data-en="Photos">Photos</a></li>
+        </ul>
+    </div>
+
+    <main class="multimedia-content">
+        
+        <!-- SECTION 1 : VIDÉOS -->
+        <section class="category-section" id="videos">
+            <h2 class="category-title" data-fr="Vidéos" data-en="Videos">Vidéos</h2>
+            
+            <div class="video-carousel-container">
+                <!-- Instruction courte, douce et semi-transparente -->
+                <p class="click-instruction" id="clickInstruction" data-fr="Clique sur la couverture pour voir la vidéo" data-en="Click on the cover to watch the video">Clique sur la couverture pour voir la vidéo</p>
+
+                <div class="video-stage" id="videoStage">
+                    
+                    <!-- Film 1 : Voyage à Table ! (Itinérêves) -->
+                    <div class="video-card pos-center" 
+                         data-index="0" 
+                         data-url="https://www.instagram.com/reel/DC9d7IuTgNp/?utm_source=ig_web_copy_link&vrfl=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA=="
+                         data-title="Voyage à Table !" 
+                         data-desc="Lors d'un projet scolaire nous avons du créer un évènement pour notre association scolaire nommée Itinérêves qui permet aux étudiants de discuter d'Erasmus avec des personnes y étant déjà aller. Nous avons du annoncer sur les réseaux notre date pour ce moment de partage. Nous avons créer de la vidéo du brainstorming au montage !">
+                        <img src="film1.png" alt="Couverture Film 1" class="card-cover">
+                    </div>
+
+                    <!-- Film 2 : Clip Victor Vermeulen -->
+                    <div class="video-card pos-right" 
+                         data-index="1" 
+                         data-url="https://youtu.be/qRc95QoHbsw?si=EmFsBFpYvlhwSVfw"
+                         data-title="Regarde-Moi - Victor Vermeulen (Official Music Video)" 
+                         data-desc="À l’occasion de la sortie de la première chanson de mon ami proche, Regarde-Moi de Victor Vermeulen, j’ai collaboré avec une camarade à la création de son clip musical. De l’écriture du scénario au tournage, nous avons imaginé un univers mêlant tristesse et joie, en utilisant les moyens à notre disposition (caméra, téléphone, etc.). Ce projet m’a permis d’explorer la narration visuelle et de participer à toutes les étapes de la réalisation.">
+                        <img src="film2.png" alt="Couverture Film 2" class="card-cover">
+                    </div>
+
+                    <!-- Film 3 : Testez, Profitez ! -->
+                    <div class="video-card pos-left" 
+                         data-index="2" 
+                         data-url="https://youtu.be/f0YhGCploqU?si=KT0b1LpAUfW3vBgM"
+                         data-title="Testez, Profitez !" 
+                         data-desc="Dans le cadre du projet scolaire Creative Storm, nous avons réalisé une vidéo publicitaire encourageant les jeunes à pratiquer des activités comme le sport et l’écriture. De la conception au tournage, jusqu’au montage, nous avons développé un projet créatif en équipe. Ce travail nous a permis d’obtenir la 3ᵉ place sur le podium de l’ISCOM Lyon et de nous qualifier pour le concours national.">
+                        <img src="film3.png" alt="Couverture Film 3" class="card-cover">
+                    </div>
+
+                </div>
+
+                <!-- Brief -->
+                <div class="video-brief-container" id="videoBrief">
+                    <h3 id="briefTitle">Voyage à Table !</h3>
+                    <p id="briefText">Lors d'un projet scolaire nous avons du créer un évènement pour notre association scolaire nommée Itinérêves qui permet aux étudiants de discuter d'Erasmus avec des personnes y étant déjà aller. Nous avons du annoncer sur les réseaux notre date pour ce moment de partage. Nous avons créer de la vidéo du brainstorming au montage !</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ligne de séparation identique à Concept & Rédaction -->
+        <hr class="section-divider">
+
+        <!-- SECTION 2 : PHOTOS -->
+        <section class="category-section photo-gallery-section last-section" id="photos">
+            <h2 class="category-title" data-fr="Photos" data-en="Photos">Photos</h2>
+            
+            <div class="photo-wall">
+                <!-- Colonne 1 -->
+                <div class="photo-col">
+                    <div class="photo-item aspect-square">
+                        <img src="pic1.png" alt="Photo 1" onerror="this.remove()">
+                        <span class="placeholder-label">pic1.png</span>
+                    </div>
+                    <div class="photo-item aspect-tall">
+                        <img src="pic2.png" alt="Photo 2" onerror="this.remove()">
+                        <span class="placeholder-label">pic2.png</span>
+                    </div>
+                    <div class="photo-item aspect-wide">
+                        <img src="pic3.png" alt="Photo 3" onerror="this.remove()">
+                        <span class="placeholder-label">pic3.png</span>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 -->
+                <div class="photo-col">
+                    <div class="photo-item aspect-wide">
+                        <img src="pic4.png" alt="Photo 4" onerror="this.remove()">
+                        <span class="placeholder-label">pic4.png</span>
+                    </div>
+                    <div class="photo-item aspect-tall">
+                        <img src="pic5.png" alt="Photo 5" onerror="this.remove()">
+                        <span class="placeholder-label">pic5.png</span>
+                    </div>
+                    <div class="photo-item aspect-square">
+                        <img src="pic6.png" alt="Photo 6" onerror="this.remove()">
+                        <span class="placeholder-label">pic6.png</span>
+                    </div>
+                </div>
+
+                <!-- Colonne 3 -->
+                <div class="photo-col">
+                    <div class="photo-item aspect-tall">
+                        <img src="pic7.png" alt="Photo 7" onerror="this.remove()">
+                        <span class="placeholder-label">pic7.png</span>
+                    </div>
+                    <div class="photo-item aspect-square">
+                        <img src="pic8.png" alt="Photo 8" onerror="this.remove()">
+                        <span class="placeholder-label">pic8.png</span>
+                    </div>
+                    <div class="photo-item aspect-wide">
+                        <img src="pic9.png" alt="Photo 9" onerror="this.remove()">
+                        <span class="placeholder-label">pic9.png</span>
+                    </div>
+                </div>
+
+                <!-- Colonne 4 -->
+                <div class="photo-col">
+                    <div class="photo-item aspect-wide">
+                        <img src="pic10.png" alt="Photo 10" onerror="this.remove()">
+                        <span class="placeholder-label">pic10.png</span>
+                    </div>
+                    <div class="photo-item aspect-tall">
+                        <img src="pic11.png" alt="Photo 11" onerror="this.remove()">
+                        <span class="placeholder-label">pic11.png</span>
+                    </div>
+                    <div class="photo-item aspect-square">
+                        <img src="pic12.png" alt="Photo 12" onerror="this.remove()">
+                        <span class="placeholder-label">pic12.png</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- Menu Déroulant ---
+        const dropdownToggle = document.getElementById('dropdownToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownToggle.addEventListener('click', () => {
+            dropdownToggle.classList.toggle('active');
+            dropdownMenu.classList.toggle('open');
+        });
+
+        dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                dropdownToggle.classList.remove('active');
+                dropdownMenu.classList.remove('open');
+            });
+        });
+
+        // --- Carrousel Vidéo Doux ---
+        const cards = document.querySelectorAll('.video-card');
+        const briefTitle = document.getElementById('briefTitle');
+        const briefText = document.getElementById('briefText');
+
+        let positionsState = [0, 1, 2]; 
+
+        function updateCarousel(targetIndex) {
+            const currentPosIndex = positionsState.indexOf(targetIndex);
+            
+            if (currentPosIndex === 0) return;
+
+            if (currentPosIndex === 1) {
+                positionsState.push(positionsState.shift());
+            } else if (currentPosIndex === 2) {
+                positionsState.unshift(positionsState.pop());
+            }
+
+            cards.forEach(card => {
+                const cardIdx = parseInt(card.getAttribute('data-index'));
+                const posInState = positionsState.indexOf(cardIdx);
+
+                card.classList.remove('pos-center', 'pos-right', 'pos-left');
+
+                if (posInState === 0) {
+                    card.classList.add('pos-center');
+                    briefTitle.textContent = card.getAttribute('data-title');
+                    briefText.textContent = card.getAttribute('data-desc');
+                } else if (posInState === 1) {
+                    card.classList.add('pos-right');
+                } else if (posInState === 2) {
+                    card.classList.add('pos-left');
+                }
+            });
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const idx = parseInt(card.getAttribute('data-index'));
+                const posInState = positionsState.indexOf(idx);
+
+                if (posInState === 0) {
+                    // Si la carte est au centre, ouvre le lien externe dans un nouvel onglet
+                    const externalUrl = card.getAttribute('data-url');
+                    if (externalUrl) {
+                        window.open(externalUrl, '_blank', 'noopener,noreferrer');
+                    }
+                } else {
+                    // Sinon, fait tourner le carrousel pour la mettre au centre
+                    updateCarousel(idx);
+                }
+            });
+        });
+
+        // --- Langue & Thème ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langFr = document.getElementById('lang-fr');
+        const langEn = document.getElementById('lang-en');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const translatableElements = document.querySelectorAll('[data-fr]');
+
+        function applyLanguage(lang) {
+            langEn.classList.toggle('active', lang === 'en');
+            langFr.classList.toggle('active', lang === 'fr');
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            themeToggleBtn.textContent = isDark ? '☀︎' : '⏾';
+        }
+
+        let currentLang = localStorage.getItem('site_lang') || 'fr';
+        let currentTheme = localStorage.getItem('site_theme') || 'light';
+
+        applyLanguage(currentLang);
+        applyTheme(currentTheme);
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('site_lang', currentLang);
+            applyLanguage(currentLang);
+        });
+
+        themeToggleBtn.addEventListener('click', () => {
+            currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('site_theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    </script>
+</body>
+</html>
