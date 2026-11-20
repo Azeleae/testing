@@ -1,9 +1,9 @@
-/* Déclaration de la police locale Bootzy TM */
+/* Déclaration de la police locale Bootzy TM liée au dossier src/fonts */
 @font-face {
     font-family: 'Bootzy TM';
-    src: url('fonts/BootzyTM.woff') format('woff'),
-         url('fonts/BootzyTM.otf') format('opentype'),
-         url('fonts/BootzyTM.ttf') format('truetype');
+    src: url('src/fonts/BootzyTM.woff') format('woff'),
+         url('src/fonts/BootzyTM.otf') format('opentype'),
+         url('src/fonts/BootzyTM.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -200,7 +200,7 @@ body {
 .highlight-name {
     font-family: 'Bootzy TM', cursive, sans-serif;
     color: var(--accent-color);
-    letter-spacing: 0.05em; /* Équivalent d'un tracking de 25 sous Figma/Photoshop (Si c'est trop peu, changez par 2.5px ou 25px) */
+    letter-spacing: 0.05em;
 }
 
 .sparkle-symbol {
