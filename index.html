@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Éléa</title>
+    <link rel="icon" type="image/png" href="src/favicon.png">
     <!-- Import des polices Google Fonts : Figtree & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +25,6 @@
             <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
             <span>•</span>
             <a href="presentation.html" data-fr="Présentation" data-en="About">Présentation</a>
-            <span>•</span>
-            <a href="portfolio.html" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
         </nav>
 
         <div class="nav-controls">
@@ -45,16 +44,16 @@
                 <span id="typewriter"></span><span class="cursor">|</span>
             </h1>
             <h2 class="sub-greeting">
-                <span id="intro-text">Je m'appelle</span> <span class="highlight-name">Éléa</span> <span class="sparkle-symbol">˖᯽ ݁˖</span>
+                <span id="intro-text" data-fr="Je m'appelle" data-en="My name is">Je m'appelle</span> <span class="highlight-name">Éléa</span> <span class="sparkle-symbol">˖᯽ ݁˖</span>
             </h2>
             
-            <p class="description" id="hero-desc">
+            <p class="description" id="hero-desc" data-fr="Designer et créatrice curieuse, j’aime toucher à tout, explorer de nouvelles idées et créer au gré de mes envies." data-en="Curious designer and builder, I love trying new things, exploring fresh ideas, and creating whatever sparks my imagination.">
                 Designer et créatrice curieuse, j’aime toucher à tout, explorer de nouvelles idées et créer au gré de mes envies.
             </p>
 
             <div class="links">
                 <a href="starter.html" class="btn btn-portfolio" data-fr="cv" data-en="cv">cv</a>
-                <a href="https://www.linkedin.com/in/el%C3%A9a-mayor-36355132b/" target="_blank" rel="noopener noreferrer" class="btn btn-portfolio">linkedin</a>
+                <a href="https://www.linkedin.com/in/el%C3%A9a-mayor-36355132b/" target="_blank" rel="noopener noreferrer" class="btn btn-portfolio" data-fr="linkedin" data-en="linkedin">linkedin</a>
                 <a href="portfolio.html" class="btn btn-portfolio" data-fr="portfolio" data-en="portfolio">portfolio</a>
             </div>
         </div>
@@ -62,9 +61,10 @@
         <!-- Zone Image Interactive -->
         <div class="hero-image">
             <div class="interactive-container">
-                <img src="elea_travail.png" alt="Éléa au travail" id="heroImg">
+                <!-- Image chargée depuis le dossier src -->
+                <img src="src/elea_travail.png" alt="Éléa au travail" id="heroImg">
 
-                <!-- Hotspots -->
+                <!-- Hotspots avec traduction FR/EN -->
                 <div class="hotspot" style="top: 10%; left: 30%; width: 45%; height: 50%;">
                     <div class="tooltip tooltip-top">
                         <span class="tooltip-arrow"></span>
@@ -154,49 +154,42 @@
         const langEn = document.getElementById('lang-en');
         const themeToggleBtn = document.getElementById('theme-toggle');
         const heroImg = document.getElementById('heroImg');
-        const introText = document.getElementById('intro-text');
-        const heroDesc = document.getElementById('hero-desc');
         const translatableElements = document.querySelectorAll('[data-fr]');
-
-        const translations = {
-            fr: { intro: "Je m'appelle", desc: "Designer et créatrice curieuse, j’aime toucher à tout, explorer de nouvelles idées et créer au gré de mes envies." },
-            en: { intro: "My name is", desc: "Curious designer and builder, I love trying new things, exploring fresh ideas, and creating whatever sparks my imagination." }
-        };
 
         // --- 3. Fonctions d'application de la Langue ---
         function applyLanguage(lang) {
             langEn.classList.toggle('active', lang === 'en');
             langFr.classList.toggle('active', lang === 'fr');
 
-            if (introText) introText.textContent = translations[lang].intro;
-            if (heroDesc) heroDesc.textContent = translations[lang].desc;
-
             translatableElements.forEach(el => {
-                el.textContent = el.getAttribute(`data-${lang}`);
+                const targetText = el.getAttribute(`data-${lang}`);
+                if (targetText) {
+                    el.textContent = targetText;
+                }
             });
         }
 
-        // --- 4. Fonctions d'application du Thème ---
+        // --- 4. Fonctions d'application du Thème (chemins src mis à jour) ---
         function applyTheme(theme) {
             if (theme === 'dark') {
                 document.body.classList.add('dark-mode');
                 themeToggleBtn.textContent = '☀︎';
-                if (heroImg) heroImg.src = 'elea_travail_black.png';
+                if (heroImg) heroImg.src = 'src/elea_travail_black.png';
             } else {
                 document.body.classList.remove('dark-mode');
                 themeToggleBtn.textContent = '⏾';
-                if (heroImg) heroImg.src = 'elea_travail.png';
+                if (heroImg) heroImg.src = 'src/elea_travail.png';
             }
         }
 
-        // --- 5. Chargement Initial des Préférences Récupérées ---
+        // --- 5. Chargement Initial ---
         let currentLang = localStorage.getItem('site_lang') || 'fr';
         let currentTheme = localStorage.getItem('site_theme') || 'light';
 
         applyLanguage(currentLang);
         applyTheme(currentTheme);
 
-        // --- 6. Événements au clic (avec Sauvegarde) ---
+        // --- 6. Événements au clic ---
         langToggleBtn.addEventListener('click', () => {
             currentLang = currentLang === 'fr' ? 'en' : 'fr';
             localStorage.setItem('site_lang', currentLang);
